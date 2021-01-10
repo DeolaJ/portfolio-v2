@@ -81,20 +81,20 @@ const Portfolio = () => {
     {
       id: 7,
       title: 'Portfolio - V1',
-      link: 'https://portfolio-v1-deolaj.netlify.app/',
+      link: 'deolaj.xyz',
       github_link: 'https://github.com/DeolaJ/deola-j',
-      description: 'SPA built on the Star wars API for characters, starships, and planets',
+      description: 'First version of my portfolio site',
       stack: 'Gatsby JS, Netlify, Emotion',
       img: '/portfolio-v1.png',
     },
     {
       id: 8,
       title: 'Portfolio - V2',
-      link: 'https://deolaj.xyz',
+      link: 'https://deolaj.vercel.app',
       github_link: 'https://github.com/DeolaJ/portfolio-v2',
-      description: 'SPA built on the Star wars API for characters, starships, and planets',
-      stack: 'Next JS, Vercel, Tailwind CSS',
-      img: '/portfolio-v1.png',
+      description: 'Second version of my portfolio site. Work in progress',
+      stack: 'Next JS, Vercel, Tailwind CSS, Styled Components',
+      img: '/portfolio-v2.png',
     },
   ];
 

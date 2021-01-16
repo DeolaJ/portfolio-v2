@@ -81,7 +81,7 @@ const Portfolio = () => {
     {
       id: 7,
       title: 'Portfolio - V1',
-      link: 'deolaj.xyz',
+      link: 'http://deolaj.xyz',
       github_link: 'https://github.com/DeolaJ/deola-j',
       description: 'First version of my portfolio site',
       stack: 'Gatsby JS, Netlify, Emotion',
@@ -90,7 +90,7 @@ const Portfolio = () => {
     {
       id: 8,
       title: 'Portfolio - V2',
-      link: 'https://deolaj.vercel.app',
+      link: 'https://deolaj.com',
       github_link: 'https://github.com/DeolaJ/portfolio-v2',
       description: 'Second version of my portfolio site. Work in progress',
       stack: 'Next JS, Vercel, Tailwind CSS, Styled Components',

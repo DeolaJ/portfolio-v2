@@ -73,6 +73,8 @@ const About = () => {
             <StackPills>Babel</StackPills>
             <StackPills>Webpack</StackPills>
             <StackPills>Next JS</StackPills>
+            <StackPills>Jest</StackPills>
+            <StackPills>Enzyme</StackPills>
           </ul>
         </article>
       </Section>

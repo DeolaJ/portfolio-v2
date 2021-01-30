@@ -18,7 +18,7 @@ const Portfolio = () => {
       link: 'https://deolaj-movieinc.netlify.app/',
       github_link: 'https://github.com/DeolaJ/movie-inc',
       description:
-        "An iterface for viewing the latest Movies. Movies details can be viewed, movies can be rated and favourited. Built with themovied's API",
+        "An interface for viewing the latest Movies. Movies details can be viewed, movies can be rated and favourited. Built with themovied's API",
       stack: 'React JS, Redux, Netlify',
       img: '/movie-inc.png',
     },

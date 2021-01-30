@@ -14,12 +14,13 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: 'Image Gallery',
-      link: 'https://deolaj-image-gallery.netlify.app/',
-      github_link: 'https://github.com/DeolaJ/image-gallery',
-      description: "Mini Image Search interface built with Unsplash' API",
-      stack: 'React JS, Unsplash, Redux, Netlify',
-      img: '/image-gallery.png',
+      title: 'Movie Inc',
+      link: 'https://deolaj-movieinc.netlify.app/',
+      github_link: 'https://github.com/DeolaJ/movie-inc',
+      description:
+        "An iterface for viewing the latest Movies. Movies details can be viewed, movies can be rated and favourited. Built with themovied's API",
+      stack: 'React JS, Redux, Netlify',
+      img: '/movie-inc.png',
     },
   ];
 
@@ -95,6 +96,15 @@ const Portfolio = () => {
       description: 'Second version of my portfolio site. Work in progress',
       stack: 'Next JS, Vercel, Tailwind CSS, Styled Components',
       img: '/portfolio-v2.png',
+    },
+    {
+      id: 9,
+      title: 'Image Gallery',
+      link: 'https://deolaj-image-gallery.netlify.app/',
+      github_link: 'https://github.com/DeolaJ/image-gallery',
+      description: "Mini Image Search interface built with Unsplash' API",
+      stack: 'React JS, Unsplash, Redux, Netlify',
+      img: '/image-gallery.png',
     },
   ];
 

@@ -9,11 +9,13 @@ const CardLink = styled.a`
     display: block !important;
   }
 
-  ${(props) => (props.imageCard && `
+  ${(props) =>
+    props.imageCard &&
+    `
     > div:not(.portfolio-content) {
       box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
     }
-  `)};
+  `};
 `;
 
 const PortfolioCard = ({ projects, mini }) => {
@@ -23,8 +25,7 @@ const PortfolioCard = ({ projects, mini }) => {
         {projects.map((project) => (
           <div
             className="grid grid-cols-1 mb-14 md:mb-6 gap-y-4 md:gap-y-16 gap-x-8 md:grid-cols-5"
-            key={project.id}
-          >
+            key={project.id}>
             <CardLink
               href={project.link}
               rel="noopener noreferrer"
@@ -35,7 +36,7 @@ const PortfolioCard = ({ projects, mini }) => {
                 alt={project.title}
                 width={640}
                 height={345}
-                className="w-full rounded-lg"
+                className="object-cover object-top w-full rounded-lg"
                 layout="intrinsic"
               />
             </CardLink>
@@ -44,8 +45,7 @@ const PortfolioCard = ({ projects, mini }) => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 no-underline hover:underline"
-              >
+                className="text-gray-700 no-underline hover:underline">
                 <h4 className="mb-2 text-lg font-semibold text-gray-800 uppercase sm:text-xl md:text-2xl">
                   {project.title}
                 </h4>
@@ -77,8 +77,7 @@ const PortfolioCard = ({ projects, mini }) => {
           href={project.link}
           rel="noopener noreferrer"
           target="_blank"
-          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5"
-        >
+          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
           <Image
             src={project.img}
             alt={project.title}
@@ -92,8 +91,7 @@ const PortfolioCard = ({ projects, mini }) => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 no-underline hover:underline"
-            >
+              className="text-gray-700 no-underline hover:underline">
               <h4 className="mb-2 text-base font-semibold text-gray-800 uppercase sm:text-lg">
                 {project.title}
               </h4>

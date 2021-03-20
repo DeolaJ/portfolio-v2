@@ -27,6 +27,12 @@ const BlogPosts = () => {
       link:
         'https://blog.formpl.us/twin-macro-tutorial-for-beginners-styling-with-tailwind-css-and-emotion-in-react-5228c819d713?source=your_stories_page-------------------------------------',
     },
+    {
+      id: 5,
+      title: 'How to create a Custom Route Blocking Modal in React',
+      link:
+        'https://blog.formpl.us/how-to-create-a-custom-route-blocking-modal-in-react-9306139ee3c7',
+    },
   ];
 
   return (

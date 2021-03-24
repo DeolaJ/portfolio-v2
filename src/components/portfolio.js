@@ -14,13 +14,12 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: 'Movie Inc',
-      link: 'https://deolaj-movieinc.netlify.app/',
-      github_link: 'https://github.com/DeolaJ/movie-inc',
-      description:
-        "An interface for viewing the latest Movies. Movies details can be viewed, movies can be rated and favourited. Built with themovied's API",
-      stack: 'React JS, Redux, Netlify',
-      img: '/movie-inc.png',
+      title: 'Tandem Comics',
+      link: 'https://tandemcomics.com',
+      github_link: 'https://github.com/DeolaJ/tandem-comics',
+      description: 'A platform for Gospel art and comics content creators',
+      stack: 'Next JS, Sanity, Vercel, Cloudinary',
+      img: '/tandem.png',
     },
   ];
 
@@ -105,6 +104,16 @@ const Portfolio = () => {
       description: "Mini Image Search interface built with Unsplash' API",
       stack: 'React JS, Unsplash, Redux, Netlify',
       img: '/image-gallery.png',
+    },
+    {
+      id: 10,
+      title: 'Movie Inc',
+      link: 'https://deolaj-movieinc.netlify.app/',
+      github_link: 'https://github.com/DeolaJ/movie-inc',
+      description:
+        "An interface for viewing the latest Movies. Movies details can be viewed, movies can be rated and favourited. Built with themovied's API",
+      stack: 'React JS, Redux, Netlify',
+      img: '/movie-inc.png',
     },
   ];
 

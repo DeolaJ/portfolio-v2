@@ -44,11 +44,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const projectPosts: ProjectProps[] = await client
+  const projectPosts = await client
     .getEntries({ content_type: 'art' })
     .then((response) => response.items);
 
-  const projectPost: ProjectProps = await client
+  const projectPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
@@ -72,7 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const projectPosts: ProjectProps[] = await client
+  const projectPosts = await client
     .getEntries({ content_type: 'projects', order: 'sys.createdAt' })
     .then((response) => response.items);
 

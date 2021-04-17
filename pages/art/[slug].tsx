@@ -46,11 +46,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts: ImageProps[] = await client
+  const artPosts = await client
     .getEntries({ content_type: 'art' })
     .then((response) => response.items);
 
-  const artPost: ImageProps = await client
+  const artPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
@@ -72,7 +72,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts: ImageProps[] = await client
+  const artPosts = await client
     .getEntries({ content_type: 'art', order: 'sys.createdAt' })
     .then((response) => response.items);
 

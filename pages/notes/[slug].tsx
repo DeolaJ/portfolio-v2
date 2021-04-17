@@ -44,11 +44,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const notePosts: NoteProps[] = await client
+  const notePosts = await client
     .getEntries({ content_type: 'art' })
     .then((response) => response.items);
 
-  const notePost: NoteProps = await client
+  const notePost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
@@ -70,7 +70,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const notePosts: NoteProps[] = await client
+  const notePosts = await client
     .getEntries({ content_type: 'art', order: 'sys.createdAt' })
     .then((response) => response.items);
 

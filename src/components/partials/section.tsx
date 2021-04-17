@@ -1,6 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
 import Button from './button';
+import Link from 'next/link';
 
 type SectionProps = {
   className?: string;
@@ -64,19 +65,16 @@ export const SlicedListSection: FC<PropsWithChildren<SlicedListSectionProps>> = 
   listType,
   listLink,
   complete,
-  internal,
 }) => (
   <section className={`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`}>
     <>{children}</>
 
     {complete && (
-      <Button
-        text={listType}
-        link={listLink}
-        className="flex mt-4 mb-12 ml-auto"
-        sub
-        internal={internal}
-      />
+      <Link href={listLink}>
+        <a>
+          <Button text={listType} className="flex mt-4 mb-12 ml-auto" sub />
+        </a>
+      </Link>
     )}
   </section>
 );

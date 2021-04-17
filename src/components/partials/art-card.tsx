@@ -66,16 +66,7 @@ const ArtCard: FC<ArtCardProps> = ({ art }) => {
 };
 
 ArtCard.propTypes = {
-  art: PropTypes.shape({
-    sys: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-    fields: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      imageUrl: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
+  art: PropTypes.any.isRequired,
 };
 
 export default ArtCard;

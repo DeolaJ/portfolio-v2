@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import { Section, SectionTitle, SectionTitleSub } from './partials/section';
 import Button from './partials/button';
 
-const Contact = () => {
+const Contact: FC = () => {
   return (
     <Section className="text-center section contact-container">
-      <div className="mx-auto mb-4 sm:w-3/6">
-        <Image src="/boy.png" width={528} height={528} layout="intrinsic" alt="hero illustration" />
+      <div className="w-3/4 p-5 mx-auto mb-4 sm:w-2/3">
+        <Image
+          src="https://res.cloudinary.com/dzpntisxj/image/upload/v1618660376/digital-art/IMG_4590_mo3fje.png"
+          width={528}
+          height={528}
+          layout="intrinsic"
+          alt="hero illustration"
+        />
       </div>
       <SectionTitle>Contact</SectionTitle>
       <SectionTitleSub>Are you ready to work with me?</SectionTitleSub>
@@ -19,7 +25,7 @@ const Contact = () => {
         {" I'll "}
         try my best to get back to you.
       </p>
-      <Button href="mailto:adeola.adeyemoj@gmail.com" text="Get in touch" />
+      <Button link="mailto:adeola.adeyemoj@gmail.com" text="Get in touch" />
     </Section>
   );
 };

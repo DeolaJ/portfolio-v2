@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import '../styles/globals.css';
 import Head from 'next/head';
 import { AppProps } from 'next/app';

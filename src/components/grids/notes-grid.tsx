@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
 

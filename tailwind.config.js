@@ -1,8 +1,8 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}'],
-  darkMode: false, // or 'media' or 'class'
+  purge: ['./pages/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
+  darkMode: false,
   theme: {
     extend: {
       gridTemplateColumns: {

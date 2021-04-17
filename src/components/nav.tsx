@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import Social from './social';
 import DesktopMenu from './partials/desktop-menu';
 import MobileMenu from './partials/mobile-menu';

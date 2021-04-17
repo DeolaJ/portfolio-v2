@@ -8,8 +8,8 @@ import { createClient } from 'contentful';
 import Layout from '../../src/components/layout';
 // import ProjectPostPage from '../../src/components/posts/project';
 
-import { ProjectProps } from '../../src/types';
-import { getNextAndPrevious } from '../../src/utils';
+import { ProjectProps, ProjectPropsFields } from '../../src/types';
+import { getNextAndPrevious, generateProjectPosts } from '../../src/utils';
 
 type ProjectPostProps = {
   projectPost: ProjectProps;
@@ -44,9 +44,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const projectPosts = await client
-    .getEntries({ content_type: 'art' })
-    .then((response) => response.items);
+  const projectPosts: ProjectProps[] = await client
+    .getEntries<ProjectPropsFields>({ content_type: 'projects' })
+    .then((response) => {
+      const posts = generateProjectPosts(response.items);
+      return posts;
+    });
 
   const projectPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
@@ -72,9 +75,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const projectPosts = await client
-    .getEntries({ content_type: 'projects', order: 'sys.createdAt' })
-    .then((response) => response.items);
+  const projectPosts: ProjectProps[] = await client
+    .getEntries<ProjectPropsFields>({ content_type: 'projects', order: 'sys.createdAt' })
+    .then((response) => {
+      const posts = generateProjectPosts(response.items);
+      return posts;
+    });
 
   const paths = projectPosts.map(({ fields: { slug } }) => ({ params: { slug } }));
 

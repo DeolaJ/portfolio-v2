@@ -3,13 +3,13 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import PropTypes from 'prop-types';
-import { createClient } from 'contentful';
+import { createClient, Entry } from 'contentful';
 
 import Layout from '../../src/components/layout';
 // import ArtPostPage from '../../src/components/posts/note';
 
-import { ImageProps } from '../../src/types';
-import { getNextAndPrevious } from '../../src/utils';
+import { ImageProps, ImagePropsFields } from '../../src/types';
+import { getNextAndPrevious, generateArtPosts } from '../../src/utils';
 
 type ArtProps = {
   artPost: ImageProps;
@@ -46,9 +46,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts = await client
-    .getEntries({ content_type: 'art' })
-    .then((response) => response.items);
+  const artPosts: ImageProps[] = await client
+    .getEntries<ImagePropsFields>({ content_type: 'art' })
+    .then((response) => {
+      const posts = generateArtPosts(response.items);
+      return posts;
+    });
 
   const artPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
@@ -72,9 +75,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts = await client
-    .getEntries({ content_type: 'art', order: 'sys.createdAt' })
-    .then((response) => response.items);
+  const artPosts: ImageProps[] = await client
+    .getEntries<ImagePropsFields>({ content_type: 'art', order: 'sys.createdAt' })
+    .then((response) => {
+      const posts = generateArtPosts(response.items);
+      return posts;
+    });
 
   const paths = artPosts.map(({ fields: { slug } }) => ({ params: { slug } }));
 

@@ -6,53 +6,59 @@ interface BlockContentType {
   nodeType: string;
 }
 
+export type ImagePropsFields = {
+  title: string;
+  imageUrl: string;
+  description: string;
+  slug: string;
+  tags: string[];
+};
+
 export type ImageProps = {
   sys: {
     id: string;
   };
-  fields: {
-    title: string;
-    imageUrl: string;
-    description: string;
-    slug: string;
-    tags: string[];
-  };
+  fields: ImagePropsFields;
+};
+
+export type ProjectPropsFields = {
+  title: string;
+  subtitle: BlockContentType;
+  slug: string;
+  imageLink: string;
+  body: BlockContentType;
+  stack: string[];
+  githubLink: string;
+  liveLink: string;
+  projectType: 'featured' | 'side' | 'mini';
+  descriptionImage: string;
 };
 
 export type ProjectProps = {
   sys: {
     id: string;
   };
-  fields: {
-    title: string;
-    subtitle: BlockContentType;
-    slug: string;
-    imageLink: string;
-    body: BlockContentType;
-    stack: string[];
-    githubLink: string;
-    liveLink: string;
-    projectType: 'featured' | 'side' | 'mini';
-    descriptionImage: string;
-  };
+  fields: ProjectPropsFields;
+};
+
+export type NotePropsFields = {
+  title: string;
+  subtitle: BlockContentType;
+  slug: string;
+  headerImage: string;
+  tags: string[];
+  body: BlockContentType;
+  backdropColor: string;
+  author: string;
+  headerImageWidth: number;
+  headerImageHeight: number;
 };
 
 export type NoteProps = {
   sys: {
     id: string;
   };
-  fields: {
-    title: string;
-    subtitle: BlockContentType;
-    slug: string;
-    headerImage: string;
-    tags: string[];
-    body: BlockContentType;
-    backdropColor: string;
-    author: string;
-    headerImageWidth: number;
-    headerImageHeight: number;
-  };
+  fields: NotePropsFields;
 };
 
 export type TalkProps = {

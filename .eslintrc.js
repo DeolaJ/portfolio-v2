@@ -4,13 +4,13 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
-    'airbnb',
+    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
   parserOptions: {
@@ -19,6 +19,11 @@ module.exports = {
     },
     ecmaVersion: 11,
     sourceType: 'module',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   plugins: ['react', 'simple-import-sort'],
   rules: {

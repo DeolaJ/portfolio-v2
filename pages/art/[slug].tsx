@@ -3,13 +3,14 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import PropTypes from 'prop-types';
-import { createClient, Entry } from 'contentful';
+import { createClient } from 'contentful';
 
 import Layout from '../../src/components/layout';
 // import ArtPostPage from '../../src/components/posts/note';
 
 import { ImageProps, ImagePropsFields } from '../../src/types';
-import { getNextAndPrevious, generateArtPosts } from '../../src/utils';
+// import { getNextAndPrevious, generateArtPosts } from '../../src/utils';
+import { generateArtPosts } from '../../src/utils';
 
 type ArtProps = {
   artPost: ImageProps;
@@ -46,25 +47,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts: ImageProps[] = await client
-    .getEntries<ImagePropsFields>({ content_type: 'art' })
-    .then((response) => {
-      const posts = generateArtPosts(response.items);
-      return posts;
-    });
+  // const artPosts: ImageProps[] = await client
+  //   .getEntries<ImagePropsFields>({ content_type: 'art' })
+  //   .then((response) => {
+  //     const posts = generateArtPosts(response.items);
+  //     return posts;
+  //   });
 
   const artPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
-  const index = artPosts.findIndex((artPost) => artPost.fields.slug === context.params.slug);
+  // const index = artPosts.findIndex((artPost) => artPost.fields.slug === context.params.slug);
 
-  const navigationPosts = getNextAndPrevious(artPosts, index);
+  // const navigationPosts = getNextAndPrevious(artPosts, index);
 
   return {
     props: {
       artPost,
-      navigationPosts,
+      // navigationPosts,
     },
   };
 };

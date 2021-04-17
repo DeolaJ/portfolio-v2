@@ -9,7 +9,8 @@ import Layout from '../../src/components/layout';
 // import NotePostPage from '../../src/components/posts/note';
 
 import { NoteProps, NotePropsFields } from '../../src/types';
-import { getNextAndPrevious, generateNotePosts } from '../../src/utils';
+// import { getNextAndPrevious, generateNotePosts } from '../../src/utils';
+import { generateNotePosts } from '../../src/utils';
 
 type NotePostProps = {
   notePost: NoteProps;
@@ -44,25 +45,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const notePosts: NoteProps[] = await client
-    .getEntries<NotePropsFields>({ content_type: 'notes' })
-    .then((response) => {
-      const posts = generateNotePosts(response.items);
-      return posts;
-    });
+  // const notePosts: NoteProps[] = await client
+  //   .getEntries<NotePropsFields>({ content_type: 'notes' })
+  //   .then((response) => {
+  //     const posts = generateNotePosts(response.items);
+  //     return posts;
+  //   });
 
   const notePost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
-  const index = notePosts.findIndex((notePost) => notePost.fields.slug === context.params.slug);
+  // const index = notePosts.findIndex((notePost) => notePost.fields.slug === context.params.slug);
 
-  const navigationPosts = getNextAndPrevious(notePosts, index);
+  // const navigationPosts = getNextAndPrevious(notePosts, index);
 
   return {
     props: {
       notePost,
-      navigationPosts,
+      // navigationPosts,
     },
   };
 };

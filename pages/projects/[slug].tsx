@@ -9,7 +9,8 @@ import Layout from '../../src/components/layout';
 // import ProjectPostPage from '../../src/components/posts/project';
 
 import { ProjectProps, ProjectPropsFields } from '../../src/types';
-import { getNextAndPrevious, generateProjectPosts } from '../../src/utils';
+// import { getNextAndPrevious, generateProjectPosts } from '../../src/utils';
+import { generateProjectPosts } from '../../src/utils';
 
 type ProjectPostProps = {
   projectPost: ProjectProps;
@@ -44,27 +45,27 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const projectPosts: ProjectProps[] = await client
-    .getEntries<ProjectPropsFields>({ content_type: 'projects' })
-    .then((response) => {
-      const posts = generateProjectPosts(response.items);
-      return posts;
-    });
+  // const projectPosts: ProjectProps[] = await client
+  //   .getEntries<ProjectPropsFields>({ content_type: 'projects' })
+  //   .then((response) => {
+  //     const posts = generateProjectPosts(response.items);
+  //     return posts;
+  //   });
 
   const projectPost = await client
     .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
     .then((response) => response.items);
 
-  const index = projectPosts.findIndex(
-    (projectPost) => projectPost.fields.slug === context.params.slug
-  );
+  // const index = projectPosts.findIndex(
+  //   (projectPost) => projectPost.fields.slug === context.params.slug
+  // );
 
-  const navigationPosts = getNextAndPrevious(projectPosts, index);
+  // const navigationPosts = getNextAndPrevious(projectPosts, index);
 
   return {
     props: {
       projectPost,
-      navigationPosts,
+      // navigationPosts,
     },
   };
 };

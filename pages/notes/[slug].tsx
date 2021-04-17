@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { createClient } from 'contentful';
 
 import Layout from '../../src/components/layout';
-import NotePostPage from '../../src/components/posts/note';
+// import NotePostPage from '../../src/components/posts/note';
 
 import { NoteProps } from '../../src/types';
 import { getNextAndPrevious } from '../../src/utils';
@@ -29,9 +29,7 @@ function NotePost({ notePost }: NotePostProps): ReactElement {
         <meta property="og:url" content={`www.tandemcomics.com/art/${notePost.fields.slug}`} />
       </Head>
 
-      <Layout>
-        <NotePostPage notePost={notePost} />
-      </Layout>
+      <Layout>{/* <NotePostPage notePost={notePost} /> */}</Layout>
     </>
   );
 }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { createClient } from 'contentful';
 
 import Layout from '../../src/components/layout';
-import ArtPostPage from '../../src/components/posts/note';
+// import ArtPostPage from '../../src/components/posts/note';
 
 import { ImageProps } from '../../src/types';
 import { getNextAndPrevious } from '../../src/utils';
@@ -30,7 +30,7 @@ function ArtPage({ artPost }: ArtProps): ReactElement {
       </Head>
 
       <Layout className="px-4 py-4 md:px-8 md:py-8">
-        <ArtPostPage artPost={artPost} />
+        {/* <ArtPostPage artPost={artPost} /> */}
       </Layout>
     </>
   );

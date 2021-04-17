@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { createClient } from 'contentful';
 
 import Layout from '../../src/components/layout';
-import ProjectPostPage from '../../src/components/posts/project';
+// import ProjectPostPage from '../../src/components/posts/project';
 
 import { ProjectProps } from '../../src/types';
 import { getNextAndPrevious } from '../../src/utils';
@@ -29,9 +29,7 @@ function ProjectPost({ projectPost }: ProjectPostProps): ReactElement {
         <meta property="og:url" content={`www.tandemcomics.com/art/${projectPost.fields.slug}`} />
       </Head>
 
-      <Layout>
-        <ProjectPostPage projectPost={projectPost} />
-      </Layout>
+      <Layout>{/* <ProjectPostPage projectPost={projectPost} /> */}</Layout>
     </>
   );
 }

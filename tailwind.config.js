@@ -22,6 +22,15 @@ module.exports = {
       white: colors.white,
       indigo: colors.indigo,
       blue: colors.blue,
+      custom: {
+        tea: '#EDC79B',
+        orange: '#D57A66',
+        purple: '#0e1526',
+        timber: '#DAD5CE',
+        tintRed: '#610c06',
+        darkOrange: '#a93b23',
+        lightGhost: '#fefaff',
+      },
     },
   },
   variants: {

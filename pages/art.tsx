@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { createClient } from 'contentful';
-import Global from '../src/components/global';
 import ArtPage from '../src/components/pages/art';
 import Layout from '../src/components/layout';
 
@@ -42,7 +41,6 @@ function Art({ artPosts }: ArtProps): ReactElement {
       </Head>
 
       <Layout>
-        <Global />
         <ArtPage art={artPosts} />
       </Layout>
     </>

@@ -11,10 +11,16 @@ import { Entry } from 'contentful';
 export function getNextAndPrevious<ListItemProps>(
   list: ListItemProps[],
   index: number
-): { next: ListItemProps; previous: ListItemProps } {
+): { next: ListItemProps | null; previous: ListItemProps | null } {
   let next = 0,
     previous = list.length - 1;
 
+  if (index === 0 && list.length === 1) {
+    return {
+      next: null,
+      previous: null,
+    };
+  }
   if (index !== 0) {
     previous = index - 1;
   }
@@ -52,13 +58,13 @@ export function generateNotePosts(list: Entry<NotePropsFields>[]): NoteProps[] {
       title: listItem.fields.title,
       subtitle: listItem.fields.subtitle,
       slug: listItem.fields.slug,
-      headerImage: listItem.fields.headerImage,
+      headerImage: listItem.fields.headerImage || null,
       tags: listItem.fields.tags,
-      body: listItem.fields.body,
-      backdropColor: listItem.fields.backdropColor,
-      author: listItem.fields.author,
-      headerImageWidth: listItem.fields.headerImageWidth,
-      headerImageHeight: listItem.fields.headerImageHeight,
+      body: listItem.fields.body || null,
+      backdropColor: listItem.fields.backdropColor || null,
+      author: listItem.fields.author || null,
+      headerImageWidth: listItem.fields.headerImageWidth || null,
+      headerImageHeight: listItem.fields.headerImageHeight || null,
     },
   }));
 }
@@ -73,12 +79,26 @@ export function generateProjectPosts(list: Entry<ProjectPropsFields>[]): Project
       subtitle: listItem.fields.subtitle,
       slug: listItem.fields.slug,
       imageLink: listItem.fields.imageLink,
-      body: listItem.fields.body,
+      body: listItem.fields.body || null,
       stack: listItem.fields.stack,
-      githubLink: listItem.fields.githubLink,
+      githubLink: listItem.fields.githubLink || null,
       liveLink: listItem.fields.liveLink,
       projectType: listItem.fields.projectType,
-      descriptionImage: listItem.fields.descriptionImage,
+      descriptionImage: listItem.fields.descriptionImage || null,
     },
   }));
+}
+
+export function getPostStyle<PostProps>(next: PostProps, previous: PostProps): string {
+  if (next && !previous) {
+    return 'justify-start';
+  }
+
+  if (!next && previous) {
+    return 'justify-end';
+  }
+
+  if (next && previous) {
+    return 'justify-between';
+  }
 }

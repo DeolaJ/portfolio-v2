@@ -69,7 +69,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
                   {project.fields.title}
                 </h4>
               </a>
-              {/* <p className="mb-4 text-base text-gray-700">{project.fields.subtitle}</p> */}
+              <p className="mb-4 text-base leading-6 text-gray-700">{project.fields.subtitle}</p>
               <div className="flex flex-wrap items-center justify-start mb-4 text-gray-500">
                 {project.fields.stack.map((stack) => (
                   <span className="mr-4 text-sm" key={`${project.sys.id}-${stack}`}>
@@ -115,7 +115,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
                 {project.fields.title}
               </h4>
             </a>
-            {/* <p className="mb-3 text-sm text-gray-700">{project.fields.subtitle}</p> */}
+            <p className="mb-4 text-sm leading-5 text-gray-700">{project.fields.subtitle}</p>
             <div className="flex flex-wrap items-center justify-start mb-3 text-gray-500 stack">
               {project.fields.stack.map((stack) => (
                 <span className="mr-2 text-xs" key={`${project.sys.id}-${stack}`}>

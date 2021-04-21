@@ -1,5 +1,6 @@
 import React, { ReactElement, FC } from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
 import { SectionTitle, SectionTitleSub, SlicedListSection } from '../partials/section';
 import ProjectsGrid from '../grids/projects-grid';
@@ -10,19 +11,26 @@ type ProjectsSectionProps = {
   projects: ProjectProps[];
 };
 
+const ProjectSectionWrapper = styled(SlicedListSection)`
+  background-repeat: no-repeat;
+  background-position: -6% center;
+  background-image: url(/pattern-three.png);
+  background-size: 20%;
+`;
+
 const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }): ReactElement => {
   if (projects.length === 0) {
     return null;
   }
 
   return (
-    <SlicedListSection listLink="/projects" internal listType="View All Projects" complete>
+    <ProjectSectionWrapper listLink="/projects" internal listType="View All Projects" complete>
       <SectionTitle>Projects</SectionTitle>
 
       <SectionTitleSub>Featured Projects.</SectionTitleSub>
 
       <ProjectsGrid projects={projects} />
-    </SlicedListSection>
+    </ProjectSectionWrapper>
   );
 };
 

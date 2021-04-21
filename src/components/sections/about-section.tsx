@@ -1,7 +1,17 @@
 import React, { FC } from 'react';
+import Image from 'next/image';
+import styled from '@emotion/styled';
+
 import { Section, SectionTitle, SectionTitleSub } from '../partials/section';
 import StackPills from '../partials/stack-pills';
-import Image from 'next/image';
+import { ImageWrapper } from '../styled';
+
+const AboutTextWrapper = styled(Section)`
+  background-image: url(ghost-wave.svg), url(ghost-wave-under.svg);
+  background-position: 0% 100%, 0% 0%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+`;
 
 const AboutSection: FC = () => {
   const techStack = [
@@ -77,11 +87,11 @@ const AboutSection: FC = () => {
         </article>
       </Section> */}
 
-      <Section className="text-center">
+      <AboutTextWrapper className="pt-40 text-center pb-28 bg-opacity-30 bg-custom-tea md:pt-14 mb-pb-20">
         <SectionTitle>About</SectionTitle>
         <SectionTitleSub>My Story.</SectionTitleSub>
         <article className="py-6 my-8 md:grid md:grid-cols-2 gap-x-8">
-          <article className="self-center w-3/4 mx-auto mb-4 md:mb-0 md:mx-0 md:w-full">
+          <ImageWrapper className="self-center w-3/4 mx-auto mb-4 md:mb-0 md:mx-0 md:w-full">
             <Image
               src="https://res.cloudinary.com/dzpntisxj/image/upload/v1618660362/digital-art/IMG_4589_g6a1tx.png"
               width={500}
@@ -89,8 +99,8 @@ const AboutSection: FC = () => {
               layout="intrinsic"
               alt="about illustration"
             />
-          </article>
-          <article className="self-center text-left md:-mt-6">
+          </ImageWrapper>
+          <article className="self-center text-left md:-mt-6 text-custom-purple">
             <p className="mb-4">
               I am a passionate Front end Engineer that loves solving problems with code.
             </p>
@@ -108,7 +118,7 @@ const AboutSection: FC = () => {
             <p>Currently I lead the Frontend team at Formplus</p>
           </article>
         </article>
-      </Section>
+      </AboutTextWrapper>
 
       <Section className="text-center">
         <SectionTitle>Skills</SectionTitle>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Footer from './footer';
 import Nav from './nav';
 import Contact from './contact';
+import Global from './global';
 
 type LayoutProps = {
   className?: string;
@@ -10,6 +11,7 @@ type LayoutProps = {
 
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({ className, children }) => (
   <>
+    <Global />
     <main className={className}>
       <>
         <Nav />

@@ -12,10 +12,12 @@ type ProjectsSectionProps = {
 };
 
 const ProjectSectionWrapper = styled(SlicedListSection)`
-  background-repeat: no-repeat;
-  background-position: -6% center;
-  background-image: url(/pattern-three.png);
-  background-size: 20%;
+  @media (min-width: 768px) {
+    background-repeat: no-repeat;
+    background-position: -6% center;
+    background-image: url(/pattern-three.png);
+    background-size: 20%;
+  }
 `;
 
 const ProjectsSection: FC<ProjectsSectionProps> = ({ projects }): ReactElement => {

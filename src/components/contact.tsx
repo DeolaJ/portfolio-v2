@@ -15,7 +15,7 @@ const ContactSectionWrapper = styled(Section)`
 
 const Contact: FC = () => {
   return (
-    <ContactSectionWrapper className="pt-40 text-center pb-28 md:pb-28 md:pt-12 bg-opacity-10 section bg-custom-orange contact-container">
+    <ContactSectionWrapper className="text-center py-28 md:pb-28 md:pt-12 bg-opacity-10 section bg-custom-orange contact-container">
       <SectionTitle>Contact</SectionTitle>
       <SectionTitleSub className="text-custom-purple">
         Are you ready to work with me?

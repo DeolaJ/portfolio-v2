@@ -87,7 +87,7 @@ const AboutSection: FC = () => {
         </article>
       </Section> */}
 
-      <AboutTextWrapper className="pt-40 text-center pb-28 bg-opacity-30 bg-custom-tea md:pt-14 mb-pb-20">
+      <AboutTextWrapper className="py-24 text-center bg-opacity-30 bg-custom-tea md:pt-14 mb-pb-20">
         <SectionTitle>About</SectionTitle>
         <SectionTitleSub>My Story.</SectionTitleSub>
         <article className="py-6 my-8 md:grid md:grid-cols-2 gap-x-8">

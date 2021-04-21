@@ -20,20 +20,24 @@ const HeaderImageWrapper = styled.article`
   &::after {
     content: '';
     position: absolute;
-    left: -130%;
-    top: -130%;
-    height: 180%;
+    left: -50%;
+    top: -140%;
+    height: 200%;
     transform: translate(50%, 50%);
     z-index: -1;
-    width: 180%;
+    width: 100%;
     background-image: url('/purple-blob.svg'), url('/burned-orange-blob.svg'), url('/tea-blob.svg');
-    background-position: 64% 12%, 35% 73%, 66% 74%;
-    background-size: 10%, 7%, 11%;
+    background-position: 75% 12%, 23% 73%, 77% 74%;
+    background-size: 14%, 10%, 16%;
     background-repeat: no-repeat;
 
     @media (min-width: 768px) {
       background-position: 70% 12%, 14% 73%, 86% 74%;
       background-size: 17%, 14%, 19%;
+      left: -130%;
+      top: -130%;
+      height: 180%;
+      width: 180%;
     }
   }
 `;

@@ -49,7 +49,7 @@ const MobileMenu: FC<NavMenuProps> = ({ navItems }) => {
             <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
           </>
         ) : (
-          <span className="block text-4xl leading-3">&times;</span>
+          <span className="block text-3xl leading-3">&times;</span>
         )}
       </MobileButton>
 

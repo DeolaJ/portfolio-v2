@@ -14,7 +14,11 @@ const CommunitySectionWrapper = styled(SlicedListSection)`
   background-repeat: no-repeat;
   background-position: right center;
   background-image: url(/pattern-three-sm.png);
-  background-size: 10%;
+  background-size: 25%;
+
+  @media (min-width: 768px) {
+    background-size: 10%;
+  }
 `;
 
 const CommunitySection: FC<CommunitySectionProps> = ({ talks }): ReactElement => {

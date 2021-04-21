@@ -12,9 +12,14 @@ type BlogPostsSectionProps = {
 
 const BlogSectionWrapper = styled(Section)`
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right 96%;
   background-image: url(/pattern-one.png);
-  background-size: 17%;
+  background-size: 45%;
+
+  @media (min-width: 768px) {
+    background-position: right center;
+    background-size: 17%;
+  }
 `;
 
 const BlogPostsSection: FC<BlogPostsSectionProps> = ({ blogPosts }): ReactElement => {

@@ -26,7 +26,7 @@ const CommunitySection: FC<CommunitySectionProps> = ({ talks }): ReactElement =>
     <CommunitySectionWrapper listType="View Contributions" complete={talks.length > 3}>
       <SectionTitle>Community</SectionTitle>
 
-      <SectionTitleSub>Talks and Conferences</SectionTitleSub>
+      <SectionTitleSub>Talks, Open Source, Conferences</SectionTitleSub>
 
       {talks.map((post) => (
         <article key={post.sys.id} className="rounded-md bg-custom-lightGhost">

@@ -2,21 +2,16 @@
 import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import PropTypes from 'prop-types';
+import renderToString from 'next-mdx-remote/render-to-string';
 import { createClient } from 'contentful';
 
 import Layout from '../../src/components/layout';
-// import NotePostPage from '../../src/components/posts/note';
+import NotePostPage from '../../src/components/posts/note-post';
 
-import { NoteProps, NotePropsFields } from '../../src/types';
-// import { getNextAndPrevious, generateNotePosts } from '../../src/utils';
-import { generateNotePosts } from '../../src/utils';
+import { NoteProps, NotePropsFields, NotePostProps } from '../../src/types';
+import { getNextAndPrevious, generateNotePosts } from '../../src/utils';
 
-type NotePostProps = {
-  notePost: NoteProps;
-};
-
-function NotePost({ notePost }: NotePostProps): ReactElement {
+function NotePost({ notePost, navigationPosts, postContent }: NotePostProps): ReactElement {
   return (
     <>
       <Head>
@@ -27,17 +22,19 @@ function NotePost({ notePost }: NotePostProps): ReactElement {
         <meta name="twitter:title" content={notePost.fields.title} />
         <meta property="og:title" content={notePost.fields.title} />
         <meta name="twitter:site" content={notePost.fields.title} />
-        <meta property="og:url" content={`www.tandemcomics.com/art/${notePost.fields.slug}`} />
+        <meta property="og:url" content={`www.tandemcomics.com/notes/${notePost.fields.slug}`} />
       </Head>
 
-      <Layout>{/* <NotePostPage notePost={notePost} /> */}</Layout>
+      <Layout>
+        <NotePostPage
+          postContent={postContent}
+          navigationPosts={navigationPosts}
+          notePost={notePost}
+        />
+      </Layout>
     </>
   );
 }
-
-NotePost.propTypes = {
-  image: PropTypes.objectOf(PropTypes.any).isRequired,
-};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const client = createClient({
@@ -45,25 +42,32 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  // const notePosts: NoteProps[] = await client
-  //   .getEntries<NotePropsFields>({ content_type: 'notes' })
-  //   .then((response) => {
-  //     const posts = generateNotePosts(response.items);
-  //     return posts;
-  //   });
+  const notePosts: NoteProps[] = await client
+    .getEntries<NotePropsFields>({ content_type: 'notes' })
+    .then((response) => {
+      const posts = generateNotePosts(response.items);
+      return posts;
+    });
 
-  const notePost = await client
-    .getEntries({ content_type: 'art', 'fields.slug': `${context.params.slug}` })
-    .then((response) => response.items);
+  const currentNotePost: NoteProps[] = await client
+    .getEntries<NotePropsFields>({ content_type: 'notes', 'fields.slug': `${context.params.slug}` })
+    .then((response) => {
+      const posts = generateNotePosts(response.items);
+      return posts;
+    });
 
-  // const index = notePosts.findIndex((notePost) => notePost.fields.slug === context.params.slug);
+  const body = currentNotePost[0].fields.body;
+  const postContent = await renderToString(body);
 
-  // const navigationPosts = getNextAndPrevious(notePosts, index);
+  const index = notePosts.findIndex((notePost) => notePost.fields.slug === context.params.slug);
+
+  const navigationPosts = getNextAndPrevious(notePosts, index);
 
   return {
     props: {
-      notePost,
-      // navigationPosts,
+      notePost: currentNotePost[0],
+      navigationPosts,
+      postContent,
     },
   };
 };

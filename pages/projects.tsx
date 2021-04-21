@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { createClient } from 'contentful';
-import Global from '../src/components/global';
 import ProjectsPage from '../src/components/pages/projects';
 import Layout from '../src/components/layout';
 
@@ -43,7 +42,6 @@ function Projects({ featuredProjects, miniProjects, sideProjects }: ProjectsProp
       </Head>
 
       <Layout>
-        <Global />
         <ProjectsPage
           featuredProjects={featuredProjects}
           miniProjects={miniProjects}
@@ -73,6 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .getEntries({
       content_type: 'projects',
       'fields.projectType': 'mini',
+      order: '-sys.createdAt',
     })
     .then((response) => response.items);
 
@@ -80,6 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .getEntries({
       content_type: 'projects',
       'fields.projectType': 'side',
+      order: '-sys.createdAt',
     })
     .then((response) => response.items);
 

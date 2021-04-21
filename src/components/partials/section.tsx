@@ -15,7 +15,7 @@ interface SlicedListSectionProps extends SectionProps {
 }
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
-  <section className={`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`}>{children}</section>
+  <section className={`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`}>{children}</section>
 );
 
 Section.defaultProps = {

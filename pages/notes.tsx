@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { createClient } from 'contentful';
 
-import Global from '../src/components/global';
 import NotesPage from '../src/components/pages/notes';
 import Layout from '../src/components/layout';
 
@@ -43,7 +42,6 @@ function Notes({ notesPost }: NotesProps): ReactElement {
       </Head>
 
       <Layout>
-        <Global />
         <NotesPage notes={notesPost} />
       </Layout>
     </>

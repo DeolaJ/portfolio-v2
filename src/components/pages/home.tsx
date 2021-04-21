@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import styled from '@emotion/styled';
 
 import Header from '../header';
 import AboutSection from '../sections/about-section';
@@ -10,6 +11,14 @@ import CommunitySection from '../sections/community-section';
 import BlogpostsSection from '../sections/blogposts-section';
 
 import { TalkProps, BlogPostProps, NoteProps, ProjectProps } from '../../types';
+import { ImageWrapper } from '../styled';
+
+const MidSectionWrapper = styled.section`
+  background-image: url('timber-blob.svg'), url('burned-orange-blob.svg'), url('purple-blob.svg');
+  background-position: 10% 35%, 85% 70%, 70% 0%;
+  background-size: 25%, 20%, 16%;
+  background-repeat: no-repeat;
+`;
 
 type HomePageProps = {
   notes: NoteProps[];
@@ -32,15 +41,17 @@ const HomePage: FC<HomePageProps> = ({ notes, projects, talks, blogPosts }) => {
       <AboutSection />
       <ProjectsSection projects={projects} />
       <NotesSection notes={notes} />
-      <section className="w-3/4 p-5 mx-auto text-center sm:w-2/3">
-        <Image
-          src="https://res.cloudinary.com/dzpntisxj/image/upload/v1618660361/digital-art/IMG_4592_fg3oci.png"
-          width={528}
-          height={528}
-          layout="intrinsic"
-          alt="hero illustration"
-        />
-      </section>
+      <MidSectionWrapper className="">
+        <ImageWrapper className="w-3/4 p-5 mx-auto text-center sm:w-2/3">
+          <Image
+            src="https://res.cloudinary.com/dzpntisxj/image/upload/v1618660361/digital-art/IMG_4592_fg3oci.png"
+            width={528}
+            height={528}
+            layout="intrinsic"
+            alt="hero illustration"
+          />
+        </ImageWrapper>
+      </MidSectionWrapper>
       <CommunitySection talks={talks} />
       <BlogpostsSection blogPosts={blogPosts} />
     </section>

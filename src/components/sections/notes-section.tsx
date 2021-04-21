@@ -2,7 +2,7 @@ import React, { ReactElement, FC } from 'react';
 import PropTypes from 'prop-types';
 
 import { SectionTitle, SectionTitleSub, SlicedListSection } from '../partials/section';
-// import NotesGrid from '../partials/notes-grid';
+// import NotesGrid from '../grids/notes-grid';
 
 import { NoteProps } from '../../types';
 
@@ -11,7 +11,7 @@ type NotesSectionProps = {
 };
 
 const NotesSection: FC<NotesSectionProps> = ({ notes }): ReactElement => {
-  if (notes.length === 0) {
+  if (notes.length !== 0) {
     return null;
   }
 

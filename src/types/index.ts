@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-interface BlockContentType {
-  content: BlockContentType;
-  data: Record<string, unknown>;
-  marks: any[];
-  nodeType: string;
-}
+import { MdxRemote } from 'next-mdx-remote/types';
+// interface BlockContentType {
+//   content: BlockContentType;
+//   data: Record<string, unknown>;
+//   marks: any[];
+//   nodeType: string;
+// }
 
 export type ImagePropsFields = {
   title: string;
@@ -23,10 +24,10 @@ export type ImageProps = {
 
 export type ProjectPropsFields = {
   title: string;
-  subtitle: BlockContentType;
+  subtitle: string;
   slug: string;
   imageLink: string;
-  body: BlockContentType;
+  body: string;
   stack: string[];
   githubLink: string;
   liveLink: string;
@@ -43,11 +44,11 @@ export type ProjectProps = {
 
 export type NotePropsFields = {
   title: string;
-  subtitle: BlockContentType;
+  subtitle: string;
   slug: string;
   headerImage: string;
   tags: string[];
-  body: BlockContentType;
+  body: string;
   backdropColor: string;
   author: string;
   headerImageWidth: number;
@@ -82,5 +83,31 @@ export type BlogPostProps = {
   fields: {
     title: string;
     mediumLink: string;
+  };
+};
+
+export type NotePostProps = {
+  notePost: NoteProps;
+  navigationPosts: {
+    next: NoteProps | null;
+    previous: NoteProps | null;
+  };
+  postContent: MdxRemote.Source;
+};
+
+export type ProjectPostProps = {
+  projectPost: ProjectProps;
+  navigationPosts: {
+    next: ProjectProps | null;
+    previous: ProjectProps | null;
+  };
+  postContent: MdxRemote.Source;
+};
+
+export type ArtPostProps = {
+  artPost: ImageProps;
+  navigationPosts: {
+    next: ImageProps | null;
+    previous: ImageProps | null;
   };
 };

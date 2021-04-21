@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { createClient } from 'contentful';
 
-import Global from '../src/components/global';
 import Layout from '../src/components/layout';
 import HomePage from '../src/components/pages/home';
 
@@ -45,7 +44,6 @@ export default function Home({ notes, blogPosts, projects, talks }: HomeProps): 
       </Head>
 
       <Layout>
-        <Global />
         <HomePage notes={notes} projects={projects} talks={talks} blogPosts={blogPosts} />
       </Layout>
     </>

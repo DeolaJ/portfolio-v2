@@ -7,6 +7,7 @@ import { ImageProps } from '../../types';
 
 type ArtCardProps = {
   art: ImageProps;
+  page?: boolean;
 };
 
 const ImageWrapper = styled.div`
@@ -15,7 +16,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const ArtCard: FC<ArtCardProps> = ({ art }) => {
+const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
   const [visible, setVisible] = useState(false);
   const refPlaceholder = useRef<null | HTMLDivElement>();
   const refContentPlaceholder = useRef<null | HTMLDivElement>();
@@ -51,22 +52,29 @@ const ArtCard: FC<ArtCardProps> = ({ art }) => {
             />
           </ImageWrapper>
 
-          <div className="py-2 mb-2">
-            <a href={art.fields.imageUrl}>
-              <h4 className="mb-1 text-lg font-medium text-gray-800 hover:text-gray-900 hover:underline">
-                {art.fields.title}
-              </h4>
-            </a>
-            <p className="m-0 text-sm text-gray-700">{art.fields.description}</p>
-          </div>
+          {!page && (
+            <div className="py-2 mb-2">
+              <a href={art.fields.imageUrl}>
+                <h4 className="mb-1 text-lg font-medium text-gray-800 hover:text-gray-900 hover:underline">
+                  {art.fields.title}
+                </h4>
+              </a>
+              <p className="m-0 text-sm text-gray-700">{art.fields.description}</p>
+            </div>
+          )}
         </>
       )}
     </article>
   );
 };
 
+ArtCard.defaultProps = {
+  page: false,
+};
+
 ArtCard.propTypes = {
   art: PropTypes.any.isRequired,
+  page: PropTypes.bool,
 };
 
 export default ArtCard;

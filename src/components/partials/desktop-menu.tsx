@@ -17,7 +17,7 @@ const DesktopMenu: FC<NavMenuProps> = ({ navItems }) => (
     {navItems.map((navItem) => (
       <li className="inline-block p-2 mx-2 my-0" key={navItem.id}>
         <Link href={navItem.link}>
-          <a className="p-1 mr-2 text-sm font-bold no-underline cursor-pointer hover:underline">
+          <a className="p-1 mr-2 text-sm font-bold no-underline cursor-pointer hover:underline hover:text-custom-darkOrange">
             <span>{navItem.text}</span>
           </a>
         </Link>

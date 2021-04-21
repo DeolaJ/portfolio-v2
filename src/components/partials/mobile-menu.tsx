@@ -42,9 +42,15 @@ const MobileMenu: FC<NavMenuProps> = ({ navItems }) => {
       <MobileButton
         className="inline-block w-6 bg-transparent border-none outline-none cursor-pointer md:hidden focus:outline-none"
         onClick={toggleOpen}>
-        <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
-        <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
-        <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
+        {!open ? (
+          <>
+            <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
+            <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
+            <span className="block w-full mb-1.5 border-t-2 border-solid leading-1 border-gray-700 rounded-lg" />
+          </>
+        ) : (
+          <span className="block text-3xl leading-3">&times;</span>
+        )}
       </MobileButton>
 
       {open && (

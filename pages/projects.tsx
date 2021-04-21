@@ -71,6 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .getEntries({
       content_type: 'projects',
       'fields.projectType': 'mini',
+      order: '-sys.createdAt',
     })
     .then((response) => response.items);
 
@@ -78,6 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .getEntries({
       content_type: 'projects',
       'fields.projectType': 'side',
+      order: '-sys.createdAt',
     })
     .then((response) => response.items);
 

@@ -1,7 +1,10 @@
 import React, { FC, PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
-import Button from './button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+import Button from './button';
+import { fadeInUp } from '../../animation';
 
 type SectionProps = {
   className?: string;
@@ -15,7 +18,11 @@ interface SlicedListSectionProps extends SectionProps {
 }
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
-  <section className={`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`}>{children}</section>
+  <motion.section
+    variants={fadeInUp}
+    className={`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`}>
+    {children}
+  </motion.section>
 );
 
 Section.defaultProps = {
@@ -28,10 +35,11 @@ Section.propTypes = {
 };
 
 export const SectionTitle: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
-  <h2
+  <motion.h2
+    variants={fadeInUp}
     className={`mb-3.5 text-gray-600 tracking-wide uppercase font-semibold text-base ${className}`}>
     {children}
-  </h2>
+  </motion.h2>
 );
 
 SectionTitle.defaultProps = {
@@ -44,10 +52,11 @@ SectionTitle.propTypes = {
 };
 
 export const SectionTitleSub: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
-  <h4
+  <motion.h4
+    variants={fadeInUp}
     className={`mb-7 text-gray-800 text-2xl sm:md:text-3xl md:text-4xl tracking-wide font-semibold ${className}`}>
     {children}
-  </h4>
+  </motion.h4>
 );
 
 SectionTitleSub.defaultProps = {
@@ -66,7 +75,9 @@ export const SlicedListSection: FC<PropsWithChildren<SlicedListSectionProps>> = 
   listLink,
   complete,
 }) => (
-  <section className={`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`}>
+  <motion.section
+    variants={fadeInUp}
+    className={`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`}>
     <>{children}</>
 
     {complete && (
@@ -76,7 +87,7 @@ export const SlicedListSection: FC<PropsWithChildren<SlicedListSectionProps>> = 
         </a>
       </Link>
     )}
-  </section>
+  </motion.section>
 );
 
 SlicedListSection.defaultProps = {

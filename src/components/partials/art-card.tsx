@@ -2,15 +2,17 @@ import React, { FC, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 import { ImageProps } from '../../types';
+import { fadeInUp, zoomIn, staggerMd } from '../../animation';
 
 type ArtCardProps = {
   art: ImageProps;
   page?: boolean;
 };
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   > img {
     transition: visibility 0.5s ease;
   }
@@ -28,7 +30,11 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
   };
 
   return (
-    <article className="relative w-full rounded-lg">
+    <motion.article
+      variants={staggerMd}
+      className="relative w-full rounded-lg"
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.975 }}>
       <div className="w-full bg-gray-100 rounded-lg h-80 shadow-artcard" ref={refPlaceholder} />
 
       <div className="px-3 py-5" ref={refContentPlaceholder}>
@@ -38,7 +44,7 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
 
       {art.sys.id && (
         <>
-          <ImageWrapper>
+          <ImageWrapper variants={fadeInUp}>
             <Image
               className={`absolute top-0 left-0 block object-cover w-full rounded-lg shadow-artcard ${
                 visible ? 'visible' : 'invisible'
@@ -53,18 +59,18 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
           </ImageWrapper>
 
           {!page && (
-            <div className="py-2 mb-2">
+            <motion.div className="py-2 mb-2" variants={fadeInUp}>
               <a href={art.fields.imageUrl}>
                 <h4 className="mb-1 text-lg font-medium text-gray-800 hover:text-gray-900 hover:underline">
                   {art.fields.title}
                 </h4>
               </a>
               <p className="m-0 text-sm text-gray-700">{art.fields.description}</p>
-            </div>
+            </motion.div>
           )}
         </>
       )}
-    </article>
+    </motion.article>
   );
 };
 

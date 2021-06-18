@@ -3,6 +3,7 @@
 import React, { ReactNode } from 'react';
 import '../styles/globals.css';
 import Head from 'next/head';
+import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
@@ -22,9 +23,12 @@ function MyApp({ Component, pageProps }: AppProps): ReactNode {
 
         <meta property="og:image:type" content="image/png" />
         <meta property="og:type" content="profile" />
-        <meta name="theme-color" content="#43359B" />
+        <meta name="theme-color" content="#0e1526" />
       </Head>
-      <Component {...pageProps} />
+
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} />
+      </AnimatePresence>
     </>
   );
 }

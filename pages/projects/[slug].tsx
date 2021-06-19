@@ -23,13 +23,18 @@ function ProjectPost({
           {projectPost.fields.title}
           {' | Project'}
         </title>
+        <meta
+          name="keywords"
+          content={`Adeola, Adeyemo, Joseph, Adeola Adeyemo, Adeola Adeyemo J., front end, frontend, developer, react, ui engineer, frontend engineer, lagos, nigeria, front end developer, developer, ${projectPost.fields.stack.join(
+            ', '
+          )}, ${projectPost.fields.title}`}
+        />
         <meta name="twitter:title" content={projectPost.fields.title} />
         <meta property="og:title" content={projectPost.fields.title} />
         <meta name="twitter:site" content={projectPost.fields.title} />
-        <meta
-          property="og:url"
-          content={`www.tandemcomics.com/projects/${projectPost.fields.slug}`}
-        />
+        <meta property="og:url" content={`www.deolaj.com/projects/${projectPost.fields.slug}`} />
+        <meta property="twitter:image:src" content={projectPost.fields.imageLink} />
+        <meta property="og:image" content={projectPost.fields.imageLink} />
       </Head>
 
       <Layout>

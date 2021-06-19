@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, CSSProperties } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -8,6 +8,7 @@ import { fadeInUp } from '../../animation';
 
 type SectionProps = {
   className?: string;
+  style?: CSSProperties;
 };
 
 interface SlicedListSectionProps extends SectionProps {
@@ -17,9 +18,10 @@ interface SlicedListSectionProps extends SectionProps {
   internal?: boolean;
 }
 
-export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
+export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, className, style }) => (
   <motion.section
     variants={fadeInUp}
+    style={style}
     className={`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`}>
     {children}
   </motion.section>

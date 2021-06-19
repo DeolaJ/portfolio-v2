@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
 import { ImageProps } from '../../types';
-import { fadeInUp, zoomIn, staggerMd } from '../../animation';
+import { fadeInUp, staggerMd } from '../../animation';
 
 type ArtCardProps = {
   art: ImageProps;

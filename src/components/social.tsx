@@ -8,7 +8,7 @@ const SocialWrapper = styled.ul`
 `;
 
 const Social: FC = () => (
-  <SocialWrapper className="block w-full p-0 m-0 mb-8 list-none md:mb-0 md:w-5">
+  <SocialWrapper className="block w-full p-0 m-0 mb-8 list-none md:mb-0">
     <li className="inline-block w-5 sm:w-6 mx-2.5 sm:mx-4 md:mb-5 md:px-0 md:block">
       <a
         href="https://github.com/DeolaJ"

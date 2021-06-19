@@ -11,7 +11,6 @@ import { ImageProps, ImagePropsFields, ArtPostProps } from '../../src/types';
 import { getNextAndPrevious, generateArtPosts } from '../../src/utils';
 
 function ArtPost({ artPost, navigationPosts }: ArtPostProps): ReactElement {
-  console.log({ artPost, navigationPosts });
   return (
     <>
       <Head>

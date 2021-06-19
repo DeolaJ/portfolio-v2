@@ -19,10 +19,16 @@ function NotePost({ notePost, navigationPosts, postContent }: NotePostProps): Re
           {notePost.fields.title}
           {' | Note'}
         </title>
+
+        <meta name="twitter:image:src" content={notePost.fields.imageLink} />
         <meta name="twitter:title" content={notePost.fields.title} />
         <meta property="og:title" content={notePost.fields.title} />
+        <meta name="twitter:description" content={notePost.fields.subtitle} />
+        <meta name="og:description" content={notePost.fields.subtitle} />
         <meta name="twitter:site" content={notePost.fields.title} />
-        <meta property="og:url" content={`www.tandemcomics.com/notes/${notePost.fields.slug}`} />
+        <meta property="og:url" content={`www.deolaj.com/notes/${notePost.fields.slug}`} />
+        <meta property="og:image" content={notePost.fields.imageLink} />
+        <meta property="og:site_name" content={notePost.fields.title} />
       </Head>
 
       <Layout>

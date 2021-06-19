@@ -2,10 +2,12 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 import { Section, SectionTitle } from './partials/section';
 import Button from './partials/button';
 import { ImageWrapper } from './styled';
+import { fadeInUp, zoomIn, staggerMd } from '../animation';
 
 type HeaderProps = {
   title: string;
@@ -16,7 +18,7 @@ type HeaderProps = {
   imgHeight: number;
 };
 
-const HeaderImageWrapper = styled.article`
+const HeaderImageWrapper = styled(motion.article)`
   &::after {
     content: '';
     position: absolute;
@@ -57,14 +59,28 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
             />
           </ImageWrapper>
         </HeaderImageWrapper>
-        <article className="self-center py-6 text-center md:text-left md:col-start-1 md:col-end-4">
+        <motion.article
+          variants={staggerMd}
+          className="self-center py-6 text-center md:text-left md:col-start-1 md:col-end-4">
           <SectionTitle>{title}</SectionTitle>
-          <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">{subtitle}</h1>
-          <p className="mb-4 font-semibold">{roles}</p>
-          <Button link="mailto:adeola.adeyemoj@gmail.com" text="Get in touch" />
-        </article>
+          <motion.h1
+            variants={fadeInUp}
+            transition={{ delay: 0.3 }}
+            className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">
+            {subtitle}
+          </motion.h1>
+          <motion.p variants={fadeInUp} transition={{ delay: 0.3 }} className="mb-4 font-semibold">
+            {roles}
+          </motion.p>
+          <motion.div variants={fadeInUp} transition={{ delay: 0.3 }}>
+            <Button link="mailto:adeola.adeyemoj@gmail.com" text="Get in touch" />
+          </motion.div>
+        </motion.article>
         <article className="self-center hidden justify-self-end md:block md:mb-0 md:col-start-4 md:col-end-6 md:w-auto">
-          <HeaderImageWrapper className="relative w-full">
+          <HeaderImageWrapper
+            transition={{ delay: 0.3 }}
+            variants={zoomIn}
+            className="relative w-full">
             <Image
               src={imageLink}
               alt="hero illustration"

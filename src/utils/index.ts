@@ -38,6 +38,8 @@ export function generateArtPosts(list: Entry<ImagePropsFields>[]): ImageProps[] 
   return list.map((listItem) => ({
     sys: {
       id: listItem.sys.id,
+      created: listItem.sys.createdAt,
+      updated: listItem.sys.updatedAt,
     },
     fields: {
       title: listItem.fields.title,
@@ -53,18 +55,20 @@ export function generateNotePosts(list: Entry<NotePropsFields>[]): NoteProps[] {
   return list.map((listItem) => ({
     sys: {
       id: listItem.sys.id,
+      created: listItem.sys.createdAt,
+      updated: listItem.sys.updatedAt,
     },
     fields: {
       title: listItem.fields.title,
       subtitle: listItem.fields.subtitle,
       slug: listItem.fields.slug,
-      headerImage: listItem.fields.headerImage || null,
+      imageLink: listItem.fields.imageLink || null,
       tags: listItem.fields.tags,
       body: listItem.fields.body || null,
       backdropColor: listItem.fields.backdropColor || null,
       author: listItem.fields.author || null,
-      headerImageWidth: listItem.fields.headerImageWidth || null,
-      headerImageHeight: listItem.fields.headerImageHeight || null,
+      imageWidth: listItem.fields.imageWidth || null,
+      imageHeight: listItem.fields.imageHeight || null,
     },
   }));
 }
@@ -73,6 +77,8 @@ export function generateProjectPosts(list: Entry<ProjectPropsFields>[]): Project
   return list.map((listItem) => ({
     sys: {
       id: listItem.sys.id,
+      created: listItem.sys.createdAt,
+      updated: listItem.sys.updatedAt,
     },
     fields: {
       title: listItem.fields.title,
@@ -101,4 +107,41 @@ export function getPostStyle<PostProps>(next: PostProps, previous: PostProps): s
   if (next && previous) {
     return 'justify-between';
   }
+}
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+export function formatDate(date: string): string {
+  const dateObj = new Date(date);
+  let formattedDate = '';
+
+  formattedDate += months[dateObj.getMonth()];
+  formattedDate += ` ${dateObj.getDate()}, `;
+  formattedDate += ` ${dateObj.getFullYear()}`;
+
+  // const hours = dateObj.getHours();
+  // const minutes = dateObj.getMinutes();
+
+  // if (hours > 12) {
+  //   formattedDate += ` ${hours - 12}:${minutes > 10 ? minutes : `0${minutes}`} PM`;
+  // } else if (hours === 12) {
+  //   formattedDate += ` 12:${minutes} PM`;
+  // } else {
+  //   formattedDate += ` ${hours}:${minutes > 10 ? minutes : `0${minutes}`} AM`;
+  // }
+
+  return formattedDate;
 }

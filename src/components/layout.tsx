@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import Footer from './footer';
 import Nav from './nav';
 import Contact from './contact';
@@ -12,13 +13,13 @@ type LayoutProps = {
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({ className, children }) => (
   <>
     <Global />
-    <main className={className}>
+    <motion.main className={className} exit={{ opacity: 0 }} initial="initial" animate="animate">
       <>
         <Nav />
         {children}
         <Contact />
       </>
-    </main>
+    </motion.main>
     <Footer />
   </>
 );

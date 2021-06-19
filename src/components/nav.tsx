@@ -11,11 +11,11 @@ const navItems = [
     text: 'Dev Projects',
     link: '/projects',
   },
-  // {
-  //   id: 3,
-  //   text: 'Notes',
-  //   link: '/notes',
-  // },
+  {
+    id: 3,
+    text: 'Notes',
+    link: '/notes',
+  },
   {
     id: 2,
     text: 'Art',
@@ -29,16 +29,6 @@ const navItems = [
 ];
 
 const Aside = styled.div`
-
-  &::after {
-    content: '',
-    display: block;
-    width: 1px;
-    height: 40px;
-    background: black;
-    margin: 0 auto;
-  }
-
   ul li {
     display: block;
   }

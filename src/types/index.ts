@@ -18,6 +18,8 @@ export type ImagePropsFields = {
 export type ImageProps = {
   sys: {
     id: string;
+    created: string;
+    updated: string;
   };
   fields: ImagePropsFields;
 };
@@ -38,6 +40,8 @@ export type ProjectPropsFields = {
 export type ProjectProps = {
   sys: {
     id: string;
+    created: string;
+    updated: string;
   };
   fields: ProjectPropsFields;
 };
@@ -46,18 +50,20 @@ export type NotePropsFields = {
   title: string;
   subtitle: string;
   slug: string;
-  headerImage: string;
+  imageLink: string;
   tags: string[];
   body: string;
   backdropColor: string;
   author: string;
-  headerImageWidth: number;
-  headerImageHeight: number;
+  imageWidth: number;
+  imageHeight: number;
 };
 
 export type NoteProps = {
   sys: {
     id: string;
+    created: string;
+    updated: string;
   };
   fields: NotePropsFields;
 };

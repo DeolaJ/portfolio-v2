@@ -1,6 +1,7 @@
 import React, { ReactElement, FC } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 import { SectionTitle, SectionTitleSub, SlicedListSection } from '../partials/section';
 
@@ -33,7 +34,11 @@ const CommunitySection: FC<CommunitySectionProps> = ({ talks }): ReactElement =>
       <SectionTitleSub>Talks, Open Source, Conferences</SectionTitleSub>
 
       {talks.map((post) => (
-        <article key={post.sys.id} className="rounded-md bg-custom-lightGhost">
+        <motion.article
+          key={post.sys.id}
+          className="rounded-md bg-custom-lightGhost"
+          whileHover={{ scale: 1.025 }}
+          whileTap={{ scale: 0.975 }}>
           <div className="flex items-center justify-between w-full p-2.5 mb-6 text-gray-700 border border-gray-400 border-solid rounded-md sm:p-6 hover:text-custom-purple hover:border-custom-purple">
             <h4 className="text-sm md:text-base">{post.fields.title}</h4>
             <a
@@ -44,7 +49,7 @@ const CommunitySection: FC<CommunitySectionProps> = ({ talks }): ReactElement =>
               <h6>Slides</h6>
             </a>
           </div>
-        </article>
+        </motion.article>
       ))}
     </CommunitySectionWrapper>
   );

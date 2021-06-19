@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 
+import NotesList from '../notes-list';
+
 import { NoteProps } from '../../types';
 
 type NotesPageProps = {
@@ -8,7 +10,7 @@ type NotesPageProps = {
 };
 
 const NotesPage: FC<NotesPageProps> = ({ notes }) => {
-  return <section>Notes</section>;
+  return <NotesList notes={notes} />;
 };
 
 NotesPage.propTypes = {

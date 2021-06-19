@@ -24,15 +24,15 @@ const PostNavigation: FC<PostNavigationProps> = ({ navigationPosts, pageType }) 
       {previous && (
         <Link href={`/${pageType}/${previous.fields.slug}`}>
           <a>
-            <Button text={`<--- ${previous.fields.title}`} />
+            <Button className="max-w-xs" text={`<--- ${previous.fields.title}`} />
           </a>
         </Link>
       )}
 
-      {next && (
+      {next && previous.fields.title !== next.fields.title && (
         <Link href={`/${pageType}/${next.fields.slug}`}>
           <a>
-            <Button text={`${next.fields.title}  --->`} />
+            <Button className="max-w-xs" text={`${next.fields.title}  --->`} />
           </a>
         </Link>
       )}

@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import Button from './button';
+import { motion } from 'framer-motion';
 
+import Button from './button';
 import { ProjectProps } from '../../types';
 
 type ProjectsCardProps = {
@@ -27,7 +28,7 @@ const FeaturedWrapper = styled.div`
   }
 `;
 
-const CardLink = styled.a<CardLinkProps>`
+const CardLink = styled(motion.a)<CardLinkProps>`
   > div {
     display: block !important;
   }
@@ -47,6 +48,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
             key={project.sys.id}>
             <CardLink
               href={project.fields.liveLink}
+              whileHover={{ scale: 1.025 }}
+              whileTap={{ scale: 0.975 }}
               rel="noopener noreferrer"
               target="_blank"
               className="hover:-translate-y-1.5 flex rounded-lg shadow-card md:mb-16 md:col-start-1 md:col-end-4">
@@ -92,6 +95,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
       {projects.map((project) => (
         <CardLink
           key={project.sys.id}
+          whileHover={{ scale: 1.025 }}
+          whileTap={{ scale: 0.975 }}
           imageCard
           href={project.fields.liveLink}
           rel="noopener noreferrer"

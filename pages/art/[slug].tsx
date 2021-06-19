@@ -18,10 +18,18 @@ function ArtPost({ artPost, navigationPosts }: ArtPostProps): ReactElement {
           {artPost.fields.title}
           {' | Art'}
         </title>
+        <meta
+          name="keywords"
+          content={`Adeola, Adeyemo, Joseph, Adeola Adeyemo, Adeola Adeyemo J., lagos, nigeria, dejoe, dejoe art, de.joe, dejoe_art, deola art, deolaj, deola, balloon comics, balloon_comics, ballooon comics, comics, ${artPost.fields.tags.join(
+            ', '
+          )}, ${artPost.fields.title}`}
+        />
         <meta name="twitter:title" content={artPost.fields.title} />
         <meta property="og:title" content={artPost.fields.title} />
         <meta name="twitter:site" content={artPost.fields.title} />
-        <meta property="og:url" content={`www.tandemcomics.com/art/${artPost.fields.slug}`} />
+        <meta property="og:url" content={`www.deolaj.com/art/${artPost.fields.slug}`} />
+        <meta property="og:image" content={artPost.fields.imageUrl} />
+        <meta property="twitter:image:src" content={artPost.fields.imageUrl} />
       </Head>
 
       <Layout>

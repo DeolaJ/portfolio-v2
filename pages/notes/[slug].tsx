@@ -20,6 +20,13 @@ function NotePost({ notePost, navigationPosts, postContent }: NotePostProps): Re
           {' | Note'}
         </title>
 
+        <meta
+          name="keywords"
+          content={`Adeola, Adeyemo, Joseph, Adeola Adeyemo, Adeola Adeyemo J., front end, frontend, developer, react, ui engineer, frontend engineer, lagos, nigeria, front end developer, developer, ${notePost.fields.tags.join(
+            ', '
+          )}, ${notePost.fields.title}`}
+        />
+
         <meta name="twitter:image:src" content={notePost.fields.imageLink} />
         <meta name="twitter:title" content={notePost.fields.title} />
         <meta property="og:title" content={notePost.fields.title} />

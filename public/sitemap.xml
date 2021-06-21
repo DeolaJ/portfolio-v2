@@ -1,6 +1,33 @@
-
-    <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      
+      <url>
+              <loc>https://deolaj.com/art</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com/notes</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com/projects</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com/art/[slug]</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com/notes/[slug]</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url><url>
+              <loc>https://deolaj.com/projects/[slug]</loc>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
     </urlset>
   

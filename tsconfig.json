@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "generateSitemap.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/generateSitemap.js", "src/utils/sitemapUtils.js"],
   "exclude": ["node_modules"]
 }

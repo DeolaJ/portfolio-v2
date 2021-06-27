@@ -68,6 +68,16 @@ export type NoteProps = {
   fields: NotePropsFields;
 };
 
+export type CloudinaryImageProps = {
+  public_id: string;
+  version: number;
+  format: string;
+  width: number;
+  height: number;
+  type: string;
+  created_at: string;
+};
+
 export type TalkProps = {
   sys: {
     id: string;

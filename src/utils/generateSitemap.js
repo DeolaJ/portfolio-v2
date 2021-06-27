@@ -3,7 +3,8 @@ const fs = require('fs');
 const globby = require('globby');
 const { createClient } = require('contentful');
 
-const { generateArtPosts, generateNotePosts, generateProjectPosts } = require('./sitemapUtils');
+// const { generateArtPosts, generateNotePosts, generateProjectPosts } = require('./sitemapUtils');
+const { generateNotePosts } = require('./sitemapUtils');
 
 async function generateSiteMap() {
   const pages = await globby([
@@ -20,14 +21,14 @@ async function generateSiteMap() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const artPosts = await client
-    .getEntries({ content_type: 'art', order: 'sys.createdAt' })
-    .then((response) => {
-      const posts = generateArtPosts(response.items);
-      return posts;
-    });
+  // const artPosts = await client
+  //   .getEntries({ content_type: 'art', order: 'sys.createdAt' })
+  //   .then((response) => {
+  //     const posts = generateArtPosts(response.items);
+  //     return posts;
+  //   });
 
-  const artPaths = artPosts.map(({ fields: { slug } }) => slug);
+  // const artPaths = artPosts.map(({ fields: { slug } }) => slug);
 
   const notePosts = await client
     .getEntries({ content_type: 'notes', order: 'sys.createdAt' })
@@ -38,14 +39,14 @@ async function generateSiteMap() {
 
   const notePaths = notePosts.map(({ fields: { slug } }) => slug);
 
-  const projectPosts = await client
-    .getEntries({ content_type: 'projects', order: 'sys.createdAt' })
-    .then((response) => {
-      const posts = generateProjectPosts(response.items);
-      return posts;
-    });
+  // const projectPosts = await client
+  //   .getEntries({ content_type: 'projects', order: 'sys.createdAt' })
+  //   .then((response) => {
+  //     const posts = generateProjectPosts(response.items);
+  //     return posts;
+  //   });
 
-  const projectPaths = projectPosts.map(({ fields: { slug } }) => slug);
+  // const projectPaths = projectPosts.map(({ fields: { slug } }) => slug);
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -80,34 +81,34 @@ async function generateSiteMap() {
           `;
         })
         .join('')}
-
-      ${projectPaths
-        .map((route) => {
-          return `
-            <url>
-              <loc>${`https://deolaj.com/projects/${route}`}</loc>
-              <lastmod>${currentDate}</lastmod>
-              <changefreq>monthly</changefreq>
-              <priority>1.0</priority>
-            </url>
-          `;
-        })
-        .join('')}
-
-      ${artPaths
-        .map((route) => {
-          return `
-            <url>
-              <loc>${`https://deolaj.com/art/${route}`}</loc>
-              <lastmod>${currentDate}</lastmod>
-              <changefreq>monthly</changefreq>
-              <priority>1.0</priority>
-            </url>
-          `;
-        })
-        .join('')}
     </urlset>
   `;
+
+  // ${projectPaths
+  //   .map((route) => {
+  //     return `
+  //       <url>
+  //         <loc>${`https://deolaj.com/projects/${route}`}</loc>
+  //         <lastmod>${currentDate}</lastmod>
+  //         <changefreq>monthly</changefreq>
+  //         <priority>1.0</priority>
+  //       </url>
+  //     `;
+  //   })
+  //   .join('')}
+
+  // ${artPaths
+  //   .map((route) => {
+  //     return `
+  //       <url>
+  //         <loc>${`https://deolaj.com/art/${route}`}</loc>
+  //         <lastmod>${currentDate}</lastmod>
+  //         <changefreq>monthly</changefreq>
+  //         <priority>1.0</priority>
+  //       </url>
+  //     `;
+  //   })
+  //   .join('')}
 
   fs.writeFileSync('public/sitemap.xml', sitemap);
 }

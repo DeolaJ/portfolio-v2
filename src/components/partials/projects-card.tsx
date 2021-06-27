@@ -52,13 +52,13 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
               whileTap={{ scale: 0.975 }}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:-translate-y-1.5 flex rounded-lg shadow-card md:mb-16 md:col-start-1 md:col-end-4">
+              className="hover:-translate-y-1.5 flex rounded-lg md:mb-16 md:col-start-1 md:col-end-4">
               <Image
                 src={project.fields.imageLink}
                 alt={project.fields.title}
                 width={640}
                 height={345}
-                className="object-cover object-top w-full rounded-lg"
+                className="object-cover object-top w-full rounded-lg shadow-card"
                 layout="intrinsic"
               />
             </CardLink>
@@ -107,7 +107,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
             alt={project.fields.title}
             width={640}
             height={345}
-            className="rounded-tl-md rounded-tr-md"
+            className="rounded-tl-md object-cover object-top rounded-tr-md"
             layout="intrinsic"
           />
           <div className="p-6 portfolio-content">

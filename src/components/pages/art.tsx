@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import Header from '../header';
 import ArtGrid from '../grids/art-grid';
+import { Section, SectionTitle, SectionTitleSub } from '../partials/section';
+import Button from '../partials/button';
 
 import { ImageProps } from '../../types';
 
@@ -22,6 +25,17 @@ const ArtPage: FC<ArtPageProps> = ({ art }) => {
         imgHeight={580 * 1.25}
       />
       <ArtGrid art={art} />
+      <Section>
+        <SectionTitle>Comics</SectionTitle>
+        <SectionTitleSub>Balloon Comics Templates.</SectionTitleSub>
+        <article className="my-4">
+          <Link href="/comics-templates">
+            <a>
+              <Button text="Click to view templates" className="inline-block" />
+            </a>
+          </Link>
+        </article>
+      </Section>
     </section>
   );
 };

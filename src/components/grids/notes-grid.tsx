@@ -20,10 +20,6 @@ const NoteCard = styled.li<NoteCardProps>`
     max-height: 200px;
   }
 
-  > div:not(.portfolio-content) {
-    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.05);
-  }
-
   a:hover {
     text-decoration: underline;
   }

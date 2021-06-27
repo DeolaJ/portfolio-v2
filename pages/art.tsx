@@ -26,7 +26,7 @@ function Art({ artPosts }: ArtProps): ReactElement {
 
         <meta
           name="twitter:image:src"
-          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/b_rgb:ffd6c1,c_fill,g_north_east,h_720,w_1280,x_0,y_0/v1618333836/digital-art/IMG_4579_oza4ew.png"
         />
 
         <meta name="twitter:site" content="Art | Adeola J. Adeyemo" />
@@ -35,7 +35,7 @@ function Art({ artPosts }: ArtProps): ReactElement {
         <meta name="twitter:description" content="Art portfolio of Adeola Adeyemo" />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/b_rgb:ffd6c1,c_fill,g_north_east,h_720,w_1280,x_0,y_0/v1618333836/digital-art/IMG_4579_oza4ew.png"
         />
         <meta property="og:site_name" content="Art | Adeola J. Adeyemo" />
 

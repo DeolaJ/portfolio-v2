@@ -25,13 +25,19 @@ function Notes({ notesPost }: NotesProps): ReactElement {
 
         <meta name="description" content="Developer Notes of Adeola Adeyemo" />
 
-        <meta name="twitter:image:src" content="www.deolaj.com/portfolio-v2.png" />
+        <meta
+          name="twitter:image:src"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+        />
 
         <meta name="twitter:site" content="Notes | Adeola J. Adeyemo" />
 
         <meta name="twitter:title" content="Notes | Adeola J. Adeyemo" />
         <meta name="twitter:description" content="Developer Notes of Adeola Adeyemo" />
-        <meta property="og:image" content="www.deolaj.com/portfolio-v2.png" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+        />
         <meta property="og:site_name" content="Notes | Adeola J. Adeyemo" />
 
         <meta property="og:title" content="Notes | Adeola J. Adeyemo" />

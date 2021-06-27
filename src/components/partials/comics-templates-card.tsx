@@ -12,23 +12,22 @@ type ComicsTemplatesCardProps = {
 const ComicsTemplatesCard: FC<ComicsTemplatesCardProps> = ({ comicsTemplate }) => {
   const [visible, setVisible] = useState(false);
   const refPlaceholder = useRef(null);
-  const refContentPlaceholder = useRef(null);
+  //   const refContentPlaceholder = useRef(null);
 
   const removePlaceholder = () => {
     if (refPlaceholder) {
       refPlaceholder.current.remove();
-      refContentPlaceholder.current.remove();
+      //   refContentPlaceholder.current.remove();
     }
     setTimeout(() => setVisible(true), 500);
   };
 
   return (
     <article className="relative w-full rounded-lg shadow">
-      <div className="w-full bg-gray-100 rounded-lg h-60 shadow-artcard" ref={refPlaceholder} />
-
-      <div className="px-3 py-5" ref={refContentPlaceholder}>
-        <div className="w-2/4 h-3 mb-3 bg-gray-200" />
-      </div>
+      <div
+        className="w-full bg-gray-100 rounded-lg h-full shadow-artcard absolute left-0 top-0 z-10"
+        ref={refPlaceholder}
+      />
 
       <Image
         className={`absolute left-0 block object-cover w-full rounded-lg shadow-artcard ${

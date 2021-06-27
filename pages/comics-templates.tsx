@@ -29,7 +29,7 @@ function ComicsTemplates({ comicsTemplates }: ComicsTemplatesProps): ReactElemen
 
         <meta
           name="twitter:image:src"
-          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/ar_1:1,b_rgb:f7d3c8,c_fill,co_rgb:ffffff,g_auto,w_1000/v1618660362/digital-art/IMG_4589_g6a1tx.png"
         />
 
         <meta name="twitter:site" content="Comic Templates | Balloon Comics" />
@@ -38,7 +38,7 @@ function ComicsTemplates({ comicsTemplates }: ComicsTemplatesProps): ReactElemen
         <meta name="twitter:description" content="Comic Templates | Balloon Comics" />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dzpntisxj/image/upload/v1619022408/portfolio/portfolio_zw5ozm.png"
+          content="https://res.cloudinary.com/dzpntisxj/image/upload/ar_1:1,b_rgb:f7d3c8,c_fill,co_rgb:ffffff,g_auto,w_1000/v1618660362/digital-art/IMG_4589_g6a1tx.png"
         />
         <meta property="og:site_name" content="Comic Templates | Balloon Comics" />
 

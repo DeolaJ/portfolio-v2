@@ -4,11 +4,25 @@ import styled from '@emotion/styled';
 
 const ParagraphWrapper = styled.p`
   code {
-    display: block;
-    background-color: #e6e5fd;
-    padding: 1rem;
-    margin: 1rem 0;
-    font-size: 0.875rem;
+    display: inline-block;
+    background-color: rgb(224, 231, 255);
+    padding: 0 0.325rem;
+    line-height: 1.3rem;
+    border: 1px solid rgba(208, 206, 241, 0.7);
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+  }
+`;
+
+const ListWrapper = styled.li`
+  code {
+    display: inline-block;
+    background-color: rgb(224, 231, 255);
+    padding: 0 0.325rem;
+    line-height: 1.3rem;
+    border: 1px solid rgba(208, 206, 241, 0.7);
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
   }
 `;
 
@@ -32,10 +46,12 @@ export const List: FC = ({ children }) => <ul className="list-disc">{children}</
 
 export const NumberedList: FC = ({ children }) => <ol className="list-decimal">{children}</ol>;
 
-export const ListItem: FC = ({ children }) => <li className="text-base mb-4">{children}</li>;
+export const ListItem: FC = ({ children }) => (
+  <ListWrapper className="text-base mb-4">{children}</ListWrapper>
+);
 
 export const Code: FC = ({ children }) => (
-  <code className="block mt-4 p-4 rounded bg-fuchsia-100">{children}</code>
+  <code className="block my-4 p-4 rounded text-sm bg-indigo-100">{children}</code>
 );
 
 Header.propTypes = {

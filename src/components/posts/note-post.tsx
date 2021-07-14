@@ -34,7 +34,7 @@ const NotePostHeader = styled(Section)`
   background-repeat: no-repeat;
   background-position: left bottom, right top, center;
   background-size: 8%, 8%, cover;
-  background-color: rgba(100, 20, 187, 0.55);
+  background-color: rgba(72, 14, 134, 0.65);
   background-blend-mode: overlay;
 `;
 
@@ -44,12 +44,12 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
   return (
     <>
       <NotePostHeader
-        className="py-32 text-center text-custom-purple"
+        className="py-28 text-center text-custom-purple"
         style={{
           backgroundImage: `url(/pattern-one-sm.png), url(/pattern-two-sm.png), url(${notePost.fields.imageLink})`,
         }}>
-        <h1 className="mb-5 text-3xl text-white">{notePost.fields.title}</h1>
-        <p className="max-w-3xl mx-auto text-lg text-white opacity-90">
+        <h1 className="mb-4 text-4xl text-white max-w-xl mx-auto">{notePost.fields.title}</h1>
+        <p className="max-w-3xl mx-auto text-base text-white opacity-90">
           {notePost.fields.subtitle}
         </p>
       </NotePostHeader>

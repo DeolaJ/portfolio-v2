@@ -51,7 +51,9 @@ export const ListItem: FC = ({ children }) => (
 );
 
 export const Code: FC = ({ children }) => (
-  <code className="block my-4 p-4 rounded text-sm bg-indigo-100">{children}</code>
+  <code className="block my-4 p-4 rounded text-sm bg-indigo-100 whitespace-pre-wrap break-words">
+    {children}
+  </code>
 );
 
 Header.propTypes = {

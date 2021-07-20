@@ -1,12 +1,31 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import '../styles/globals.css';
 import Head from 'next/head';
 import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import * as gtag from '../src/lib/gtag';
 
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+
+    if (process.env.NODE_ENV === 'production') {
+      router.events.on('routeChangeComplete', handleRouteChange);
+    }
+    return () => {
+      if (process.env.NODE_ENV === 'production') {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      }
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>

@@ -7,6 +7,19 @@ import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps): ReactNode {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>

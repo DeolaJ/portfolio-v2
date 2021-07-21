@@ -10,7 +10,7 @@ import { MdxRemote } from 'next-mdx-remote/types';
 export type ImagePropsFields = {
   title: string;
   imageUrl: string;
-  description: string;
+  description: string | null;
   slug: string;
   tags: string[];
 };

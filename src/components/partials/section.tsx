@@ -56,7 +56,7 @@ SectionTitle.propTypes = {
 export const SectionTitleSub: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
   <motion.h4
     variants={fadeInUp}
-    className={`mb-7 text-gray-800 text-2xl sm:md:text-3xl md:text-4xl tracking-wide font-semibold ${className}`}>
+    className={`mb-7 text-gray-800 text-2xl sm:text-3xl md:text-4xl tracking-wide font-semibold ${className}`}>
     {children}
   </motion.h4>
 );

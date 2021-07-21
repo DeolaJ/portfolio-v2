@@ -54,11 +54,12 @@ function ComicsTemplates({ comicsTemplates }: ComicsTemplatesProps): ReactElemen
           <SectionTitleSub>Balloon Comics Templates</SectionTitleSub>
           <article className="my-4">
             To use any of the templates
-            <Link href="/comics-templates">
-              <a>
-                <Button text="Get in touch" className="inline-block ml-4" sub />
-              </a>
-            </Link>
+            <Button
+              text="Get in touch"
+              link="mailto:adeola.adeyemoj@gmail.com"
+              className="inline-block ml-4"
+              sub
+            />
           </article>
           <ComicsTemplateGrid comicsTemplates={comicsTemplates} />
         </Section>

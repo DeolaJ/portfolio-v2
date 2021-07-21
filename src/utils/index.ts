@@ -44,7 +44,7 @@ export function generateArtPosts(list: Entry<ImagePropsFields>[]): ImageProps[] 
     fields: {
       title: listItem.fields.title,
       imageUrl: listItem.fields.imageUrl,
-      description: listItem.fields.description,
+      description: listItem.fields.description || null,
       slug: listItem.fields.slug,
       tags: listItem.fields.tags,
     },

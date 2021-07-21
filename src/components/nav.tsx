@@ -4,8 +4,9 @@ import Social from './social';
 import DesktopMenu from './partials/desktop-menu';
 import MobileMenu from './partials/mobile-menu';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const navItems = [
+const defaultNavItems = [
   {
     id: 1,
     text: 'Dev Projects',
@@ -28,6 +29,29 @@ const navItems = [
   // },
 ];
 
+const artNavItems = [
+  {
+    id: 1,
+    text: 'Art',
+    link: '/art',
+  },
+  {
+    id: 2,
+    text: 'Comics Templates',
+    link: '/comics-templates',
+  },
+  {
+    id: 3,
+    text: 'Art Commissions',
+    link: '/art-commissions',
+  },
+  {
+    id: 4,
+    text: 'Commissions Terms',
+    link: '/commissions-terms',
+  },
+];
+
 const Aside = styled.div`
   ul li {
     display: block;
@@ -35,6 +59,10 @@ const Aside = styled.div`
 `;
 
 const Nav: FC = () => {
+  const router = useRouter();
+  const isArtLink = artNavItems.some((navItem) => navItem.link === router.pathname);
+  const navItems = isArtLink ? artNavItems : defaultNavItems;
+
   return (
     <>
       <nav className="flex items-center justify-start px-10 py-6">

@@ -35,7 +35,10 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
       className="relative w-full rounded-lg"
       whileHover={{ scale: 1.025 }}
       whileTap={{ scale: 0.975 }}>
-      <div className="w-full bg-gray-100 rounded-lg h-80 shadow-artcard" ref={refPlaceholder} />
+      <div
+        className="w-full bg-gray-100 rounded-lg h-72 shadow-artcard absolute left-0 top-0 z-10"
+        ref={refPlaceholder}
+      />
 
       <div className="px-3 py-5" ref={refContentPlaceholder}>
         <div className="w-2/4 h-3 mb-3 bg-gray-200" />
@@ -65,7 +68,9 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
                   {art.fields.title}
                 </h4>
               </a>
-              <p className="m-0 text-sm text-gray-700">{art.fields.description}</p>
+              {art.fields.description && (
+                <p className="m-0 text-sm text-gray-700">{art.fields.description}</p>
+              )}
             </motion.div>
           )}
         </>

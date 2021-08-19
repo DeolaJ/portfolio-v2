@@ -16,16 +16,12 @@ const NotesSection: FC<NotesSectionProps> = ({ notes }): ReactElement => {
   }
 
   return (
-    <SlicedListSection
-      listLink="/notes"
-      internal
-      listType="View All Notes"
-      complete={notes.length > 3}>
+    <SlicedListSection listLink="/notes" internal listType="View All Notes" complete>
       <SectionTitle>Notes</SectionTitle>
 
       <SectionTitleSub>Latest Notes.</SectionTitleSub>
 
-      <NotesGrid notes={notes} />
+      <NotesGrid notes={notes.slice(0, 3)} />
     </SlicedListSection>
   );
 };

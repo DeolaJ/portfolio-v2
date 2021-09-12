@@ -31,9 +31,9 @@ const HomePage: FC<HomePageProps> = ({ notes, projects, talks, blogPosts }) => {
   return (
     <section>
       <Header
-        title="Hello, I'm Adeola"
+        title="Hello, I'm Adeola Adeyemo"
         subtitle="I build Web Interfaces."
-        roles="Front End Developer and Technical Writer."
+        roles="Frontend Engineer"
         imageLink="https://res.cloudinary.com/dzpntisxj/image/upload/c_fill,ar_1:1,g_auto,r_max/v1618644680/portfolio/DSC_0516_xmjg3h.png"
         imgWidth={300}
         imgHeight={300}

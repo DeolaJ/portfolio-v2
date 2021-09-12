@@ -17,7 +17,7 @@ const AboutSection: FC = () => {
   const techStack = [
     'HTML',
     '(S)CSS',
-    'JavaScript ES6',
+    'JavaScript (ES6)',
     'TypeScript',
     'JQuery',
     'React JS',
@@ -31,13 +31,16 @@ const AboutSection: FC = () => {
     'Semantic UI',
     'Tailwind CSS',
     'Next JS',
+    'Node JS',
     'Gulp',
     'Git',
     'ESLint',
     'Babel',
     'Webpack',
     'Jest',
+    'React Testing Library',
     'Enzyme',
+    'Cypress',
     'Contentful',
     'Sanity',
   ];
@@ -102,7 +105,7 @@ const AboutSection: FC = () => {
           </ImageWrapper>
           <article className="self-center text-left md:-mt-6 text-custom-purple">
             <p className="mb-4">
-              I am a passionate Front end Engineer that loves solving problems with code.
+              I am a passionate Frontend Engineer that loves solving problems with code.
             </p>
             <p className="mb-4">
               My journey with Software development started in 2015, in my second year in the
@@ -113,9 +116,9 @@ const AboutSection: FC = () => {
             <p className="mb-4">
               Ever since, I have had the opportunity to work on interesting projects with focus on
               adding value. I kept improving on the fundamental skills and have picked up valuable
-              experience along the way
+              experience along the way. After graduating from the University, I joined Formplus.
             </p>
-            <p>Currently I lead the Frontend team at Formplus</p>
+            <p>Currently I work as a Senior Frontend Engineer at Korapay</p>
           </article>
         </article>
       </AboutTextWrapper>

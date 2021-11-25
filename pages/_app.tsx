@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactNode {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="twitter:creator" content="deo_joe" />
         <meta property="twitter:card" content="summary_large_image" />
 

@@ -1,5 +1,3 @@
-import { ethers } from 'ethers';
-
 import {
   ImageProps,
   ImagePropsFields,
@@ -146,37 +144,4 @@ export function formatDate(date: string): string {
   // }
 
   return formattedDate;
-}
-export async function startPayment({
-  setError,
-  setState,
-  amount,
-}: {
-  setError: (string) => void;
-  setState: (string) => void;
-  amount: string;
-}): Promise<void> {
-  try {
-    if (!window['ethereum']) throw new Error('No crypto wallet found. Please install any.');
-
-    await window['ethereum'].send('eth_requestAccounts');
-    const provider = new ethers.providers.Web3Provider(window['ethereum']);
-    const signer = provider.getSigner();
-    const tx = await signer.sendTransaction({
-      to: process.env.NEXT_PUBLIC_PUBLIC_WALLET,
-      value: ethers.utils.parseEther(amount),
-    });
-    setState((prevState) => ({
-      ...prevState,
-      complete: true,
-      txhash: tx.hash,
-    }));
-  } catch (err) {
-    setError(err.message);
-  } finally {
-    setState((prevState) => ({
-      ...prevState,
-      submitting: false,
-    }));
-  }
 }

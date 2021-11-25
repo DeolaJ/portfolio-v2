@@ -1,6 +1,6 @@
 import React, { FC, useState, ChangeEvent, useEffect, useRef } from 'react';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { startPayment } from '../../utils';
+import { ethers } from 'ethers';
 
 import Button from '../partials/button';
 
@@ -10,10 +10,11 @@ const DonateForm: FC = () => {
     submitting: false,
     complete: false,
     txhash: '',
+    provider: null,
   });
   const [error, setError] = useState('');
   const paymentSession = useRef(false);
-  const isWalletAvailable = typeof window !== 'undefined' && window?.['ethereum'];
+  const isWalletAvailable = typeof window !== 'undefined' && window['ethereum'];
 
   useEffect(() => {
     if (error && state.amount) {
@@ -27,6 +28,38 @@ const DonateForm: FC = () => {
     }
   }, [state.complete]);
 
+  const startPayment = async () => {
+    try {
+      if (isWalletAvailable || !state.provider)
+        throw new Error('No crypto wallet found. Please install any.');
+
+      let provider;
+      if (state.provider) {
+        provider = new ethers.providers.Web3Provider(state.provider);
+      } else {
+        await window['ethereum'].send('eth_requestAccounts');
+        provider = new ethers.providers.Web3Provider(window['ethereum']);
+      }
+      const signer = provider.getSigner();
+      const tx = await signer.sendTransaction({
+        to: process.env.NEXT_PUBLIC_PUBLIC_WALLET,
+        value: ethers.utils.parseEther(state.amount),
+      });
+      setState((prevState) => ({
+        ...prevState,
+        complete: true,
+        txhash: tx.hash,
+      }));
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setState((prevState) => ({
+        ...prevState,
+        submitting: false,
+      }));
+    }
+  };
+
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
@@ -36,11 +69,7 @@ const DonateForm: FC = () => {
       submitting: true,
       txhash: '',
     }));
-    await startPayment({
-      setError,
-      setState,
-      amount: state.amount,
-    });
+    await startPayment();
   };
 
   const triggerWalletProvider = async () => {
@@ -52,8 +81,12 @@ const DonateForm: FC = () => {
         },
       });
       await provider.enable();
+      setState((prevState) => ({
+        ...prevState,
+        provider,
+      }));
     } catch (e) {
-      setError('An error occurred');
+      setError('An error occurred while connecting');
     }
   };
 
@@ -115,7 +148,7 @@ const DonateForm: FC = () => {
 
   return (
     <React.Fragment>
-      {isWalletAvailable ? (
+      {isWalletAvailable || state.provider ? (
         <form onSubmit={handleSubmit}>
           <div className="w-full sm:w-2/3 md:w-1/2">
             <div className="my-4">

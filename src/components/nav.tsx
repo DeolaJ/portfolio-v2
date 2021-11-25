@@ -50,6 +50,11 @@ const artNavItems = [
     text: 'Commissions Terms',
     link: '/commissions-terms',
   },
+  {
+    id: 5,
+    text: 'NFTs',
+    link: '/nfts',
+  },
 ];
 
 const Aside = styled.div`

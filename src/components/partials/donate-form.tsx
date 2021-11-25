@@ -1,4 +1,5 @@
-import { FC, useState, ChangeEvent, useEffect, useRef } from 'react';
+import React, { FC, useState, ChangeEvent, useEffect, useRef } from 'react';
+import WalletConnectProvider from '@walletconnect/web3-provider';
 import { startPayment } from '../../utils';
 
 import Button from '../partials/button';
@@ -12,6 +13,7 @@ const DonateForm: FC = () => {
   });
   const [error, setError] = useState('');
   const paymentSession = useRef(false);
+  const isWalletAvailable = typeof window !== 'undefined' && window?.['ethereum'];
 
   useEffect(() => {
     if (error && state.amount) {
@@ -39,6 +41,20 @@ const DonateForm: FC = () => {
       setState,
       amount: state.amount,
     });
+  };
+
+  const triggerWalletProvider = async () => {
+    try {
+      const provider = new WalletConnectProvider({
+        infuraId: '0bb59287a71d41fe9152381a96349fef',
+        qrcodeModalOptions: {
+          mobileLinks: ['metamask', 'trust'],
+        },
+      });
+      await provider.enable();
+    } catch (e) {
+      setError('An error occurred');
+    }
   };
 
   const ErrorMessage = ({ message }) => {
@@ -98,33 +114,44 @@ const DonateForm: FC = () => {
   if (state.complete) return <SuccessMessage />;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="w-full sm:w-2/3 md:w-1/2">
-        <div className="my-4">
-          <input
-            type="text"
-            className="p-3 bg-transparent border-gray-300 text-xs sm:text-sm border block w-full focus:ring focus:outline-none"
-            placeholder="0.00"
-            value={state.amount}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              const value = e.target.value;
-              setState((prevState) => ({
-                ...prevState,
-                amount: value,
-              }));
-            }}
-          />
-        </div>
-        <div>
-          <Button
-            type="submit"
-            text="Transfer (ETH)"
-            className="focus:ring focus:outline-none w-full transfer-button"
-          />
-          <ErrorMessage message={error} />
-        </div>
-      </div>
-    </form>
+    <React.Fragment>
+      {isWalletAvailable ? (
+        <form onSubmit={handleSubmit}>
+          <div className="w-full sm:w-2/3 md:w-1/2">
+            <div className="my-4">
+              <input
+                type="text"
+                className="p-3 bg-transparent border-gray-300 text-xs sm:text-sm border block w-full focus:ring focus:outline-none"
+                placeholder="0.00"
+                value={state.amount}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  const value = e.target.value;
+                  setState((prevState) => ({
+                    ...prevState,
+                    amount: value,
+                  }));
+                }}
+              />
+            </div>
+            <div>
+              <Button
+                type="submit"
+                text="Transfer (ETH)"
+                className="focus:ring focus:outline-none w-full transfer-button"
+              />
+              <ErrorMessage message={error} />
+            </div>
+          </div>
+        </form>
+      ) : (
+        <Button
+          type="submit"
+          text="Connect Wallet"
+          onClick={() => triggerWalletProvider()}
+          className="mt-4"
+        />
+      )}
+    </React.Fragment>
   );
 };
 

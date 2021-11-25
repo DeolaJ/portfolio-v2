@@ -30,7 +30,7 @@ const DonateForm: FC = () => {
 
   const startPayment = async () => {
     try {
-      if (isWalletAvailable || !state.provider)
+      if (!isWalletAvailable && !state.provider)
         throw new Error('No crypto wallet found. Please install any.');
 
       let provider;

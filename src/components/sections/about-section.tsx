@@ -43,6 +43,7 @@ const AboutSection: FC = () => {
     'Cypress',
     'Contentful',
     'Sanity',
+    'React-Query',
   ];
 
   return (
@@ -118,7 +119,7 @@ const AboutSection: FC = () => {
               adding value. I kept improving on the fundamental skills and have picked up valuable
               experience along the way. After graduating from the University, I joined Formplus.
             </p>
-            <p>Currently I work as a Senior Frontend Engineer at Korapay</p>
+            <p>Currently, I work as a Senior Frontend Engineer at Korapay</p>
           </article>
         </article>
       </AboutTextWrapper>

@@ -68,7 +68,6 @@ async function generateSiteMap() {
           `;
         })
         .join('')}
-
       ${notePaths
         .map((route) => {
           return `

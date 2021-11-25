@@ -3,49 +3,56 @@
       
             <url>
               <loc>https://deolaj.com/art-commissions</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/art</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/comics-templates</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/commissions-terms</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          
+            <url>
+              <loc>https://deolaj.com/nfts</loc>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/notes</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/projects</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
@@ -54,35 +61,35 @@
       
             <url>
               <loc>https://deolaj.com/notes/setting-up-local-development-for-github</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/notes/setting-up-vscode-for-development</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/notes/how-to-generate-a-dynamic-sitemap-for-your-next-js-website</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/notes/how-i-dealt-with-impostor-syndrome-as-a-front-end-engineer</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://deolaj.com/notes/how-to-succeed-as-a-frontend-engineer-in-the-software-industry</loc>
-              <lastmod>2021-09-12T10:00:29.967Z</lastmod>
+              <lastmod>2021-11-25T08:05:28.786Z</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
             </url>

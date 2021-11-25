@@ -46,7 +46,7 @@ const DonateForm: FC = () => {
   const triggerWalletProvider = async () => {
     try {
       const provider = new WalletConnectProvider({
-        infuraId: '0bb59287a71d41fe9152381a96349fef',
+        infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
         qrcodeModalOptions: {
           mobileLinks: ['metamask', 'trust'],
         },

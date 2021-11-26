@@ -23,7 +23,7 @@ const DonatePage: FC = () => {
           <a href="https://foundation.app/@dejoe">
             <Button text="Foundation NFTs" className="inline-block" />
           </a>
-          <a href="https://opensea.io/deolaj">
+          <a href="https://opensea.io/Dejoe">
             <Button text="Opensea NFTs" className="inline-block ml-6" />
           </a>
         </article>

@@ -22,7 +22,7 @@ const BirthdayParty: FC = () => {
     'Tope (Teetop)',
     'Oyindamola Sulaimon',
     'Oyindamola Fatungase',
-    'Temiloluwa',
+    'Daniyelle',
     'Omolara',
     'Tobi (Lala)',
     'Olufolarin',

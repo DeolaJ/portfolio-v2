@@ -9,6 +9,7 @@ const { generateNotePosts } = require('./sitemapUtils');
 async function generateSiteMap() {
   const pages = await globby([
     'pages/**/*.tsx',
+    'pages/birthday-party.tsx',
     '!pages/_*.tsx',
     '!pages/**/[slug].tsx',
     '!pages/api',

@@ -27,7 +27,7 @@ const BirthdayParty: FC = () => {
     'Tobi (Lala)',
     'Olufolarin',
     'Lateef',
-    'Mary && Abayomi',
+    'Mary && Ayobami',
     'Adedayo',
     'Ibrahim',
     'Betty',

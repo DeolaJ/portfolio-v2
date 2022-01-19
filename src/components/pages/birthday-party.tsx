@@ -47,6 +47,7 @@ const BirthdayParty: FC = () => {
     'Precious Chilaka',
     'Bassey',
     'Ebuka Moh',
+    'Rachel',
     'Ismail Shofoluwe',
   ];
 

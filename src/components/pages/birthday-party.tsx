@@ -77,11 +77,10 @@ const BirthdayParty: FC = () => {
 
       <Section className="text-center">
         <SectionTitle>Password</SectionTitle>
-        <SectionTitleSub>Millenium Estate Password</SectionTitleSub>
+        <SectionTitleSub>Millenium Estate Gate Password</SectionTitleSub>
         <article className="my-4">
           <p className="text-base">
-            Check back on this section on the 22nd Jan. to get the password for the Millennium
-            Estate gate. To reach me, call +2347062972181 or +2348123857352
+            The password is ZD32 HASH. To reach me, call +2347062972181 (main) or +2348123857352
           </p>
         </article>
       </Section>

@@ -57,7 +57,7 @@ const BirthdayParty: FC = () => {
       <Header
         title="12PM - 7PM, 22nd Jan. 2022"
         subtitle="Birthday Parry"
-        roles="Venue: 32 Adeyeye Street, Millennium Estate, Gbagada, Lagos"
+        roles="Venue: 32 Adeyeye Street, Millennium Estate, Gbagada, Lagos (Opposite 25A)"
         imageLink="https://res.cloudinary.com/dzpntisxj/image/upload/v1637828679/digital-art/93271852-FBA7-49A0-A5DF-44DC966D7AAB_ndtarh.png"
         imgWidth={350 * 1.25}
         imgHeight={420 * 1.25}

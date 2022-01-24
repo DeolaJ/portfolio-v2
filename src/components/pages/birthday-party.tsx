@@ -74,7 +74,7 @@ const BirthdayParty: FC = () => {
       <Section className="text-center">
         <SectionTitle>Attendees</SectionTitle>
         <SectionTitleSub>
-          List of people that attendees that came around
+          List of attendees that came around
         </SectionTitleSub>
         <article className="my-8">
           <ul className="flex flex-wrap items-center justify-center">

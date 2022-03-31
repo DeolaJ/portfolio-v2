@@ -20,10 +20,10 @@ const DonatePage: FC = () => {
         <SectionTitle>NFT Portfolio</SectionTitle>
         <SectionTitleSub>Opensea and Foundation Pages</SectionTitleSub>
         <article className="my-4 flex">
-          <a href="https://foundation.app/@dejoe">
+          <a href="https://foundation.app/@deola">
             <Button text="Foundation NFTs" className="inline-block" />
           </a>
-          <a href="https://opensea.io/Dejoe">
+          <a href="https://opensea.io/deola">
             <Button text="Opensea NFTs" className="inline-block ml-6" />
           </a>
         </article>

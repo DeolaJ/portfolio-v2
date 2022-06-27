@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
 
 import Layout from '../src/components/layout';
 import ComicsTemplateGrid from '../src/components/grids/comics-templates-grid';

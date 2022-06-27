@@ -46,7 +46,7 @@ const BirthdayParty: FC = () => {
     'Ebuka Moh',
     'Rachel',
     'Ismail Shofoluwe',
-    'Adeoye'
+    'Adeoye',
   ];
 
   return (
@@ -64,18 +64,20 @@ const BirthdayParty: FC = () => {
         <SectionTitle>Appreciation</SectionTitle>
         <SectionTitleSub>Thank you</SectionTitleSub>
         <article className="my-4">
-          <p className="text-base">Thank you for attending my birthday party. You made my day and I truly hope it was fun for you</p>
           <p className="text-base">
-            If you connected with anyone at the party, and want to get their contact details, feel free to reach out to me
+            Thank you for attending my birthday party. You made my day and I truly hope it was fun
+            for you
+          </p>
+          <p className="text-base">
+            If you connected with anyone at the party, and want to get their contact details, feel
+            free to reach out to me
           </p>
         </article>
       </AboutTextWrapper>
 
       <Section className="text-center">
         <SectionTitle>Attendees</SectionTitle>
-        <SectionTitleSub>
-          List of attendees that came around
-        </SectionTitleSub>
+        <SectionTitleSub>List of attendees that came around</SectionTitleSub>
         <article className="my-8">
           <ul className="flex flex-wrap items-center justify-center">
             {attendees.map((stack) => (

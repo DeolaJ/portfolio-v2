@@ -18,13 +18,19 @@ const DonatePage: FC = () => {
       />
       <Section>
         <SectionTitle>NFT Portfolio</SectionTitle>
-        <SectionTitleSub>Opensea and Foundation Pages</SectionTitleSub>
+        <SectionTitleSub>Marketplaces</SectionTitleSub>
         <article className="my-4 flex">
           <a href="https://foundation.app/@deola">
             <Button text="Foundation NFTs" className="inline-block" />
           </a>
           <a href="https://opensea.io/deola">
             <Button text="Opensea NFTs" className="inline-block ml-6" />
+          </a>
+          <a href="https://rarible.com/deola">
+            <Button text="Rarible NFTs" className="inline-block ml-6" />
+          </a>
+          <a href="https://dejoe.holaplex.com">
+            <Button text="Holaplex NFTs" className="inline-block ml-6" />
           </a>
         </article>
       </Section>

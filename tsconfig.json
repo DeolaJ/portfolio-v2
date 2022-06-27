@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -13,7 +17,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
@@ -22,5 +27,7 @@
     "src/utils/generateSitemap.js",
     "src/utils/sitemapUtils.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

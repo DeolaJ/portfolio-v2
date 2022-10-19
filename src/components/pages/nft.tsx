@@ -9,8 +9,8 @@ const DonatePage: FC = () => {
   return (
     <section>
       <Header
-        title="Hello, I'm Deola (Dejoe)"
-        subtitle="I draw NFT Art"
+        title="Hello, I'm Deola"
+        subtitle="I sell my Digital art as NFTs"
         roles="Digital Artist and Comic Illustrator."
         imageLink="https://res.cloudinary.com/dzpntisxj/image/upload/v1637828679/digital-art/93271852-FBA7-49A0-A5DF-44DC966D7AAB_ndtarh.png"
         imgWidth={350 * 1.25}
@@ -28,9 +28,6 @@ const DonatePage: FC = () => {
           </a>
           <a href="https://rarible.com/deola">
             <Button text="Rarible NFTs" className="inline-block ml-6" />
-          </a>
-          <a href="https://dejoe.holaplex.com">
-            <Button text="Holaplex NFTs" className="inline-block ml-6" />
           </a>
         </article>
       </Section>

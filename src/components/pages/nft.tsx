@@ -16,6 +16,7 @@ const DonatePage: FC = () => {
         imgWidth={350 * 1.25}
         imgHeight={420 * 1.25}
       />
+
       <Section>
         <SectionTitle>NFT Portfolio</SectionTitle>
         <SectionTitleSub>Marketplaces</SectionTitleSub>
@@ -31,15 +32,20 @@ const DonatePage: FC = () => {
           </a>
         </article>
       </Section>
+
       <Section>
         <SectionTitle>NFT Collections</SectionTitle>
-        <SectionTitleSub>Opensea</SectionTitleSub>
-        <article className="my-4 flex flex-wrap gap-6">
+
+        <SectionTitleSub>Opensea Collections</SectionTitleSub>
+        <article className="my-4 flex flex-wrap gap-6 mb-7">
           <a href="https://opensea.io/collection/coats-of-many-colors">
             <Button text="Coats of Many Colors" className="inline-block" />
           </a>
-          <a href="https://opensea.io/collection/nebuloid-gods">
-            <Button text="Nebuloid Gods" className="inline-block" />
+          <a href="https://opensea.io/collection/balloon-comics-2">
+            <Button text="Balloon Comics #2" className="inline-block" />
+          </a>
+          <a href="https://opensea.io/collection/nebuloid-celestials">
+            <Button text="Nebuloid Celestials" className="inline-block" />
           </a>
           <a href="https://opensea.io/collection/mono-girls">
             <Button text="Mono Girls" className="inline-block" />
@@ -48,9 +54,7 @@ const DonatePage: FC = () => {
             <Button text="Inner Bliss" className="inline-block" />
           </a>
         </article>
-      </Section>
-      <Section>
-        <SectionTitle>NFT Collections</SectionTitle>
+
         <SectionTitleSub>Foundation</SectionTitleSub>
         <article className="my-4 flex">
           <a href="https://foundation.app/@deola/expression-of-self">
@@ -58,6 +62,7 @@ const DonatePage: FC = () => {
           </a>
         </article>
       </Section>
+
       <Section>
         <SectionTitle>Virtual Gallery</SectionTitle>
         <SectionTitleSub>Cyber</SectionTitleSub>

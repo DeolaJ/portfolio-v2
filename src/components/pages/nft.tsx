@@ -32,6 +32,42 @@ const DonatePage: FC = () => {
         </article>
       </Section>
       <Section>
+        <SectionTitle>NFT Collections</SectionTitle>
+        <SectionTitleSub>Opensea</SectionTitleSub>
+        <article className="my-4 flex flex-col gap-4">
+          <a href="https://opensea.io/collection/coats-of-many-colors">
+            <Button text="Coats of Many Colors" className="inline-block" />
+          </a>
+          <a href="https://opensea.io/collection/nebuloid-gods">
+            <Button text="Nebuloid Gods" className="inline-block ml-6" />
+          </a>
+          <a href="https://opensea.io/collection/mono-girls">
+            <Button text="Mono Girls" className="inline-block ml-6" />
+          </a>
+          <a href="https://opensea.io/collection/inner-bliss">
+            <Button text="Inner Bliss" className="inline-block ml-6" />
+          </a>
+        </article>
+      </Section>
+      <Section>
+        <SectionTitle>NFT Collections</SectionTitle>
+        <SectionTitleSub>Foundation</SectionTitleSub>
+        <article className="my-4 flex flex-col gap-4">
+          <a href="https://foundation.app/@deola/expression-of-self">
+            <Button text="Expression of self" className="inline-block" />
+          </a>
+        </article>
+      </Section>
+      <Section>
+        <SectionTitle>Virtual Gallery</SectionTitle>
+        <SectionTitleSub>Cyber</SectionTitleSub>
+        <article className="my-4 flex flex-col gap-4">
+          <a href="https://oncyber.io/spaces/AwoRulAypBrdLYZ31aZF">
+            <Button text="Deola's Gallery" className="inline-block" />
+          </a>
+        </article>
+      </Section>
+      <Section>
         <SectionTitle className="text-xl">Donate</SectionTitle>
         <SectionTitleSub>Support my NFT journey</SectionTitleSub>
         <article className="my-6">

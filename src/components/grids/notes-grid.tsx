@@ -36,14 +36,15 @@ const NotesGrid: FC<NotesGridProps> = ({ notes }) => {
         <NoteCard
           key={note.sys.id}
           className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
-          <Image
-            src={note.fields.imageLink}
-            alt={note.fields.title}
-            width={note.fields.imageWidth * 0.3}
-            height={note.fields.imageHeight * 0.3}
-            className="rounded-tl-md rounded-tr-md object-cover"
-            layout="intrinsic"
-          />
+          <div className="rounded-tl-md rounded-tr-md object-cover h-48 overflow-hidden">
+            <Image
+              src={note.fields.imageLink}
+              alt={note.fields.title}
+              width={note.fields.imageWidth * 0.3}
+              height={note.fields.imageHeight * 0.3}
+              layout="intrinsic"
+            />
+          </div>
           <div className="p-6">
             <Link href={`/notes/${note.fields.slug}`}>
               <a>

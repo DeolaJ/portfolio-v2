@@ -18,7 +18,10 @@ const ArtGrid: FC<ArtGridProps> = ({ art }) => {
   return (
     <Section>
       <SectionTitle>Digital Paintings</SectionTitle>
-      <SectionTitleSub>Some Recent Drawings for pleasure</SectionTitleSub>
+      <SectionTitleSub className="text-base sm:text-base md:text-base font-normal">
+        To view recent drawings, check out my Instagram/Twitter media. However, view some older
+        drawings below for pleasure
+      </SectionTitleSub>
 
       <section className="grid gap-8 my-16 place-content-between sm:gap-7 md:gap-10 sm:grid-cols-artgrid md:grid-cols-artgridMd">
         {art.map((artPost) => (

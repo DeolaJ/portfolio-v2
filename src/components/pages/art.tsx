@@ -24,6 +24,17 @@ const ArtPage: FC<ArtPageProps> = ({ art }) => {
         imgWidth={480 * 1.25}
         imgHeight={580 * 1.25}
       />
+      <Section>
+        <SectionTitle>NFTs</SectionTitle>
+        <SectionTitleSub>Profiles and Collections</SectionTitleSub>
+        <article className="my-4">
+          <Link href="/nfts">
+            <a>
+              <Button text="Click to view" className="inline-block" />
+            </a>
+          </Link>
+        </article>
+      </Section>
       <ArtGrid art={art} />
       <Section>
         <SectionTitle>Comics</SectionTitle>

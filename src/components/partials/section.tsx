@@ -1,6 +1,7 @@
 import React, { FC, PropsWithChildren, CSSProperties } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
 
 import Button from './button';
@@ -22,7 +23,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, classNa
   <motion.section
     variants={fadeInUp}
     style={style}
-    className={`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`}>
+    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`)}>
     {children}
   </motion.section>
 );
@@ -39,7 +40,9 @@ Section.propTypes = {
 export const SectionTitle: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
   <motion.h2
     variants={fadeInUp}
-    className={`mb-3.5 text-gray-600 tracking-wide uppercase font-semibold text-base ${className}`}>
+    className={twMerge(
+      `mb-3.5 text-gray-600 tracking-wide uppercase font-semibold text-base ${className}`
+    )}>
     {children}
   </motion.h2>
 );
@@ -56,7 +59,9 @@ SectionTitle.propTypes = {
 export const SectionTitleSub: FC<PropsWithChildren<SectionProps>> = ({ children, className }) => (
   <motion.h4
     variants={fadeInUp}
-    className={`mb-7 text-gray-800 text-2xl sm:text-3xl md:text-4xl tracking-wide font-semibold ${className}`}>
+    className={twMerge(
+      `mb-7 text-gray-800 text-2xl sm:text-3xl md:text-4xl tracking-wide font-semibold ${className}`
+    )}>
     {children}
   </motion.h4>
 );
@@ -79,7 +84,7 @@ export const SlicedListSection: FC<PropsWithChildren<SlicedListSectionProps>> = 
 }) => (
   <motion.section
     variants={fadeInUp}
-    className={`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`}>
+    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`)}>
     <>{children}</>
 
     {complete && (

@@ -5,7 +5,7 @@ import hydrate from 'next-mdx-remote/hydrate';
 
 import { formatDate } from '../../utils';
 
-import { Section } from '../partials/section';
+import { Section, SectionTitle, SectionTitleSub } from '../partials/section';
 import PostNavigation from './post-navigation';
 import {
   Header,
@@ -38,6 +38,25 @@ const NotePostHeader = styled(Section)`
   background-blend-mode: overlay;
 `;
 
+const NotePostWrapper = styled.div`
+  a {
+    color: rgba(67, 56, 202);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  hr {
+    margin-bottom: 1rem;
+  }
+`;
+
 const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost }) => {
   const content = hydrate(postContent, { components });
 
@@ -47,19 +66,24 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
         className="py-28 text-center text-custom-purple"
         style={{
           backgroundImage: `url(/pattern-one-sm.png), url(/pattern-two-sm.png), url(${notePost.fields.imageLink})`,
-        }}>
-        <h1 className="mb-4 text-4xl text-white max-w-xl mx-auto">{notePost.fields.title}</h1>
-        <p className="max-w-3xl mx-auto text-base text-white opacity-90">
-          {notePost.fields.subtitle}
-        </p>
-      </NotePostHeader>
+        }}
+      />
+
       <Section className="max-w-4xl mx-auto">
-        {content ? content : null}
+        <SectionTitle className="font-bold text-2xl sm:text-4xl mb:2">
+          {notePost.fields.title}
+        </SectionTitle>
+        <SectionTitleSub className="mb-12 text-base sm:text-base md:text-base lg:text-base text-gray-500 font-semibold">
+          {notePost.fields.subtitle}
+        </SectionTitleSub>
+
+        <NotePostWrapper>{content ? content : null}</NotePostWrapper>
+
         <>
-          <p className="mt-10 mb-2 text-xs italic font-bold">
+          <p className="mt-16 mb-2 text-xs italic font-bold">
             Published: {formatDate(notePost.sys.created)}
           </p>
-          <p className="-mb-10 text-xs italic font-bold">
+          <p className="-mb-4 text-xs italic font-bold">
             Last Updated: {formatDate(notePost.sys.updated)}
           </p>
         </>

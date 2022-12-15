@@ -19,20 +19,18 @@ const AboutSection: FC = () => {
     '(S)CSS',
     'JavaScript (ES6)',
     'TypeScript',
-    'JQuery',
     'React JS',
     'Redux',
-    'Angular 1',
     'Firebase',
+    'Supabase',
     'Netlify',
     'Emotion',
     'Styled-Components',
-    'Bootstrap',
     'Semantic UI',
     'Tailwind CSS',
+    'Chakra UI',
     'Next JS',
     'Node JS',
-    'Gulp',
     'Git',
     'ESLint',
     'Babel',
@@ -44,6 +42,8 @@ const AboutSection: FC = () => {
     'Contentful',
     'Sanity',
     'React-Query',
+    'PostgreSQL',
+    'Postmark',
   ];
 
   return (
@@ -119,7 +119,11 @@ const AboutSection: FC = () => {
               adding value. I kept improving on the fundamental skills and have picked up valuable
               experience along the way. After graduating from the University, I joined Formplus.
             </p>
-            <p>Currently, I work as a Senior Frontend Engineer at Korapay</p>
+            <p className="mb-4">
+              Until recently, I worked as a Senior Frontend Engineer at Kora, payments
+              infrastructure. Currently, I work at Talentdrop as a Founding Engineer.
+            </p>
+            <p></p>
           </article>
         </article>
       </AboutTextWrapper>

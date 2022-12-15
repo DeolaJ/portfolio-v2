@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .then((response) => response.items);
 
   const talks = await client
-    .getEntries({ content_type: 'talks' })
+    .getEntries({ content_type: 'talks', order: '-sys.createdAt' })
     .then((response) => response.items);
 
   const blogPosts = await client
@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .then((response) => response.items);
 
   const notes = await client
-    .getEntries({ content_type: 'notes' })
+    .getEntries({ content_type: 'notes', order: '-sys.createdAt' })
     .then((response) => response.items);
 
   return {

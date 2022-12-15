@@ -15,7 +15,7 @@ const NotesList: FC<NotesListProps> = ({ notes }) => {
     <Section>
       <SectionTitle>All Notes</SectionTitle>
 
-      <SectionTitleSub>Recent Notes.</SectionTitleSub>
+      <SectionTitleSub>Check out all my personal notes.</SectionTitleSub>
 
       <NotesGrid notes={notes} />
     </Section>

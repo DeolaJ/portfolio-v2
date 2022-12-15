@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async () => {
   });
 
   const notesPost = await client
-    .getEntries({ content_type: 'notes' })
+    .getEntries({ content_type: 'notes', order: '-sys.createdAt' })
     .then((response) => response.items);
 
   return {

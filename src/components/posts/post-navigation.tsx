@@ -20,11 +20,15 @@ const PostNavigation: FC<PostNavigationProps> = ({ navigationPosts, pageType }) 
   const { next, previous } = navigationPosts;
 
   return (
-    <article className={`flex items-center w-full my-20 ${getPostStyle(next, previous)}`}>
+    <article
+      className={`flex items-center w-full my-20 flex-col gap-4 sm:flex-row ${getPostStyle(
+        next,
+        previous
+      )}`}>
       {previous && (
         <Link href={`/${pageType}/${previous.fields.slug}`}>
           <a>
-            <Button className="max-w-xs" text={`<--- ${previous.fields.title}`} />
+            <Button className="max-w-xs text-xs" text={`<--- ${previous.fields.title}`} />
           </a>
         </Link>
       )}
@@ -32,7 +36,7 @@ const PostNavigation: FC<PostNavigationProps> = ({ navigationPosts, pageType }) 
       {next && previous.fields.title !== next.fields.title && (
         <Link href={`/${pageType}/${next.fields.slug}`}>
           <a>
-            <Button className="max-w-xs" text={`${next.fields.title}  --->`} />
+            <Button className="max-w-xs text-xs" text={`${next.fields.title}  --->`} />
           </a>
         </Link>
       )}

@@ -40,8 +40,8 @@ const NotesGrid: FC<NotesGridProps> = ({ notes }) => {
             <Image
               src={note.fields.imageLink}
               alt={note.fields.title}
-              width={note.fields.imageWidth * 0.3}
-              height={note.fields.imageHeight * 0.3}
+              width={note.fields.imageWidth * 0.45}
+              height={note.fields.imageHeight * 0.45}
               layout="intrinsic"
             />
           </div>

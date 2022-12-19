@@ -33,7 +33,7 @@ const Contact: FC = () => {
         <article className="self-center text-center md:text-left">
           <p className="mb-3 text-base md:leading-7 md:text-lg text-custom-purple">
             {"I'm "}
-            open for new opportunities and requests.
+            open to new opportunities and requests.
             <br />
           </p>
           <p className="mb-5 text-base md:leading-7 md:text-lg text-custom-purple">

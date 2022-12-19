@@ -35,7 +35,7 @@ const NotePostHeader = styled(Section)`
   background-position: left bottom, right top, center;
   background-size: 8%, 8%, cover;
   background-color: rgba(72, 14, 134, 0.65);
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
 `;
 
 const NotePostWrapper = styled.div`
@@ -66,6 +66,7 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
         className="py-28 text-center text-custom-purple"
         style={{
           backgroundImage: `url(/pattern-one-sm.png), url(/pattern-two-sm.png), url(${notePost.fields.imageLink})`,
+          backgroundColor: notePost.fields?.backdropColor || 'rgba(72, 14, 134, 0.65)',
         }}
       />
 

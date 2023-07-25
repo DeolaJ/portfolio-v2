@@ -68,6 +68,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       artPost: currentArtPost[0],
       navigationPosts,
     },
+    revalidate: 300,
   };
 };
 

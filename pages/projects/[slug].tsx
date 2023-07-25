@@ -86,6 +86,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       navigationPosts,
       postContent,
     },
+    revalidate: 300,
   };
 };
 

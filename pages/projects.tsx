@@ -95,5 +95,6 @@ export const getStaticProps: GetStaticProps = async () => {
       miniProjects,
       sideProjects,
     },
+    revalidate: 300,
   };
 };

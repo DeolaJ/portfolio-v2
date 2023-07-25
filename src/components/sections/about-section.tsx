@@ -44,6 +44,7 @@ const AboutSection: FC = () => {
     'React-Query',
     'PostgreSQL',
     'Postmark',
+    'Currently learning Go...',
   ];
 
   return (

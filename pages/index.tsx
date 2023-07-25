@@ -88,5 +88,6 @@ export const getStaticProps: GetStaticProps = async () => {
       projects,
       notes,
     },
+    revalidate: 30,
   };
 };

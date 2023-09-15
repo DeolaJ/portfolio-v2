@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import hydrate from 'next-mdx-remote/hydrate';
+import Link from 'next/link';
 
 import { formatDate } from '../../utils';
 
@@ -71,23 +72,43 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
       />
 
       <Section className="max-w-4xl mx-auto">
-        <SectionTitle className="font-bold text-2xl sm:text-4xl mb:2">
+        <div className="flex items-center gap-3 mb-12">
+          <Link href="/notes">
+            <a>
+              <p className="text-gray-700 text-xs sm:text-sm italic hover:underline">Notes</p>
+            </a>
+          </Link>
+          <p className="text-gray-400">{`>`}</p>
+          <Link href={`/notes/${notePost.fields.slug}`}>
+            <a>
+              <p className="text-gray-700 text-xs sm:text-sm italic font-bold hover:underline">
+                {notePost.fields?.title || ''}
+              </p>
+            </a>
+          </Link>
+        </div>
+
+        <SectionTitle className="font-bold text-3xl sm:text-4xl text-gray-800 capitalize">
           {notePost.fields.title}
         </SectionTitle>
-        <SectionTitleSub className="mb-12 text-base sm:text-base md:text-base lg:text-base text-gray-500 font-semibold">
+        <SectionTitleSub className="mb-3 text-base sm:text-base md:text-base lg:text-base text-gray-700 font-medium">
           {notePost.fields.subtitle}
         </SectionTitleSub>
 
+        <div className="flex items-center gap-3">
+          <p className="text-gray-700 text-xs italic">
+            <strong className="font-bolder">Published:</strong> {formatDate(notePost.sys.created)}
+          </p>
+          <p className="text-gray-500">•</p>
+          <p className="text-gray-700 text-xs italic">
+            <strong className="font-bolder">Updated:</strong> {formatDate(notePost.sys.updated)}
+          </p>
+        </div>
+
+        <hr className="mt-5 mb-12" />
+
         <NotePostWrapper>{content ? content : null}</NotePostWrapper>
 
-        <>
-          <p className="mt-16 mb-2 text-xs italic font-bold">
-            Published: {formatDate(notePost.sys.created)}
-          </p>
-          <p className="-mb-4 text-xs italic font-bold">
-            Last Updated: {formatDate(notePost.sys.updated)}
-          </p>
-        </>
         <PostNavigation navigationPosts={navigationPosts} pageType="notes" />
       </Section>
     </>

@@ -26,18 +26,20 @@ const ListWrapper = styled.li`
   }
 `;
 
-export const Header: FC = ({ children }) => <h2 className="text-4xl font-bold mb-4">{children}</h2>;
+export const Header: FC = ({ children }) => (
+  <h2 className="text-2xl font-bold mb-3 text-gray-900">{children}</h2>
+);
 
 export const HeaderTwo: FC = ({ children }) => (
-  <h3 className="text-2xl font-bold mt-8 mb-3">{children}</h3>
+  <h3 className="text-xl font-bold mt-8 mb-2 text-gray-900">{children}</h3>
 );
 
 export const HeaderThree: FC = ({ children }) => (
-  <h4 className="text-xl font-bold mt-6 mb-1">{children}</h4>
+  <h4 className="text-lg font-bold mt-6 mb-1 text-gray-900">{children}</h4>
 );
 
 export const Paragraph: FC = ({ children }) => (
-  <ParagraphWrapper className="text-base mb-3">{children}</ParagraphWrapper>
+  <ParagraphWrapper className="text-base mb-3 text-gray-800 leading-7">{children}</ParagraphWrapper>
 );
 
 export const List: FC = ({ children }) => <ul className="list-disc">{children}</ul>;

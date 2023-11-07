@@ -34,7 +34,7 @@ const HomePage: FC<HomePageProps> = ({ notes, projects, talks, blogPosts }) => {
         title="Hello, I'm Adeola Adeyemo"
         subtitle="I build Web Interfaces."
         roles="Senior Frontend / Founding Engineer"
-        imageLink="https://res.cloudinary.com/dzpntisxj/image/upload/c_fill,ar_1:1,g_auto,r_max/v1618644680/portfolio/DSC_0516_xmjg3h.png"
+        imageLink="https://res.cloudinary.com/dzpntisxj/image/upload/ar_1:1,c_fill,g_auto,r_max,w_2239/v1699352850/portfolio/3B07C44B-E994-4AAC-AF5F-FA316D2C3018_1_r64pgw.png"
         imgWidth={300}
         imgHeight={300}
       />

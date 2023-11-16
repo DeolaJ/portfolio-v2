@@ -45,6 +45,7 @@ const AboutSection: FC = () => {
     'PostgreSQL',
     'Postmark',
     'Currently learning Go...',
+    'Currently working with OpenAI',
   ];
 
   return (
@@ -107,7 +108,8 @@ const AboutSection: FC = () => {
           </ImageWrapper>
           <article className="self-center text-left md:-mt-6 text-custom-purple">
             <p className="mb-4">
-              I am a passionate Frontend Engineer that loves solving problems with code.
+              {`Senior Frontend Engineer that loves creating solutions and crafting amazing user 
+              experiences.`}
             </p>
             <p className="mb-4">
               My journey with Software development started in 2015, in my second year in the
@@ -116,13 +118,19 @@ const AboutSection: FC = () => {
               picked up relevant skills like HTML, CSS and JavaScript during that period
             </p>
             <p className="mb-4">
-              Ever since, I have had the opportunity to work on interesting projects with focus on
+              {`Ever since, I have had the opportunity to work on interesting projects with focus on
               adding value. I kept improving on the fundamental skills and have picked up valuable
-              experience along the way. After graduating from the University, I joined Formplus.
+              experience along the way. After graduating from the University, I joined Formplus (data collection) as 
+              the first Frontend Engineer on the team.`}
             </p>
             <p className="mb-4">
-              Until recently, I worked as a Senior Frontend Engineer at Kora, payments
-              infrastructure. Currently, I work at Talentdrop as a Founding Engineer.
+              {`Then, I joined Kora (payment infrastructure) as a Senior Frontend Engineer at Kora, and helped build 
+              the foundation for the Checkout Cards product for transactions. Thereafter, I joined Talentdrop as a Founding 
+              Engineer to build the future of recruiting.`}
+            </p>
+            <p className="mb-4">
+              {`Currently, I'm actively searching for my next role where I can keep adding value and working with 
+              amazing people. Feel free to reach out if you have an opening that fits my skillset or not - I'm open to learning`}
             </p>
             <p></p>
           </article>

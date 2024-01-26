@@ -17,6 +17,7 @@ import {
   ListItem,
   List,
   NumberedList,
+  HeaderFour,
 } from '../post-partials';
 import { NotePostProps } from '../../types';
 
@@ -24,6 +25,7 @@ const components = {
   h1: Header,
   h2: HeaderTwo,
   h3: HeaderThree,
+  h4: HeaderFour,
   p: Paragraph,
   li: ListItem,
   ul: List,
@@ -71,7 +73,7 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
         }}
       />
 
-      <Section className="max-w-4xl mx-auto">
+      <Section className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <Link href="/notes">
             <a>
@@ -105,7 +107,7 @@ const NotePost: FC<NotePostProps> = ({ postContent, navigationPosts, notePost })
           </p>
         </div>
 
-        <hr className="mt-5 mb-12" />
+        <hr className="mt-5 mb-5" />
 
         <NotePostWrapper>{content ? content : null}</NotePostWrapper>
 

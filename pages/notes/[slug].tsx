@@ -56,14 +56,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
   });
 
   const notePosts: NoteProps[] = await client
-    .getEntries<NotePropsFields>({ content_type: 'notes' })
+    .getEntries<NotePropsFields>({ content_type: 'notes', order: 'sys.createdAt' })
     .then((response) => {
       const posts = generateNotePosts(response.items);
       return posts;
     });
 
   const currentNotePost: NoteProps[] = await client
-    .getEntries<NotePropsFields>({ content_type: 'notes', 'fields.slug': `${context.params.slug}` })
+    .getEntries<NotePropsFields>({
+      content_type: 'notes',
+      'fields.slug': `${context.params.slug}`,
+    })
     .then((response) => {
       const posts = generateNotePosts(response.items);
       return posts;

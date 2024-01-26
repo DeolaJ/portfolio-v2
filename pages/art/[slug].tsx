@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   });
 
   const artPosts: ImageProps[] = await client
-    .getEntries<ImagePropsFields>({ content_type: 'art' })
+    .getEntries<ImagePropsFields>({ content_type: 'art', order: 'sys.createdAt' })
     .then((response) => {
       const posts = generateArtPosts(response.items);
       return posts;

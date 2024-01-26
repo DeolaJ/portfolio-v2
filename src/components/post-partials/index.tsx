@@ -12,9 +12,27 @@ const ParagraphWrapper = styled.p`
     border-radius: 0.25rem;
     font-size: 0.75rem;
   }
+
+  + ul {
+    margin-top: -0.5rem;
+  }
+
+  + ol {
+    margin-top: -0.5rem;
+  }
 `;
 
 const ListWrapper = styled.li`
+  margin-left: 2rem;
+
+  + li {
+    margin-top: 0.3rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 1rem;
+  }
+
   code {
     display: inline-block;
     background-color: rgb(224, 231, 255);
@@ -27,19 +45,25 @@ const ListWrapper = styled.li`
 `;
 
 export const Header: FC = ({ children }) => (
-  <h2 className="text-2xl font-bold mb-3 text-gray-900">{children}</h2>
+  <h2 className="text-2xl md:text-3xl font-bold mb-1 text-gray-900">{children}</h2>
 );
 
 export const HeaderTwo: FC = ({ children }) => (
-  <h3 className="text-xl font-bold mt-8 mb-2 text-gray-900">{children}</h3>
+  <h3 className="text-xl md:text-2xl font-bold mt-8 mb-1 text-gray-900">{children}</h3>
 );
 
 export const HeaderThree: FC = ({ children }) => (
-  <h4 className="text-lg font-bold mt-6 mb-1 text-gray-900">{children}</h4>
+  <h4 className="text-lg md:text-xl font-bold mt-6 mb-1 text-gray-900">{children}</h4>
+);
+
+export const HeaderFour: FC = ({ children }) => (
+  <h5 className="text-base md:text-lg font-bold mt-6 mb-1 text-gray-900">{children}</h5>
 );
 
 export const Paragraph: FC = ({ children }) => (
-  <ParagraphWrapper className="text-base mb-3 text-gray-800 leading-7">{children}</ParagraphWrapper>
+  <ParagraphWrapper className="text-base md:text-lg mb-3 text-gray-800 leading-6 md:leading-7">
+    {children}
+  </ParagraphWrapper>
 );
 
 export const List: FC = ({ children }) => <ul className="list-disc">{children}</ul>;
@@ -47,7 +71,7 @@ export const List: FC = ({ children }) => <ul className="list-disc">{children}</
 export const NumberedList: FC = ({ children }) => <ol className="list-decimal">{children}</ol>;
 
 export const ListItem: FC = ({ children }) => (
-  <ListWrapper className="text-base mb-4">{children}</ListWrapper>
+  <ListWrapper className="text-base md:text-lg mb-1">{children}</ListWrapper>
 );
 
 export const Code: FC = ({ children }) => (

@@ -17,35 +17,39 @@ const AboutSection: FC = () => {
   const techStack = [
     'HTML',
     '(S)CSS',
-    'JavaScript (ES6)',
+    'JavaScript (ES6+)',
     'TypeScript',
     'React JS',
+    'Next JS',
     'Redux',
-    'Firebase',
-    'Supabase',
-    'Netlify',
-    'Emotion',
-    'Styled-Components',
-    'Semantic UI',
+    'React Query',
     'Tailwind CSS',
     'Chakra UI',
-    'Next JS',
+    'Emotion',
+    'Styled-Components',
+    'Storybook',
+    'Web Components',
+    'Shadow DOM',
     'Node JS',
-    'Git',
-    'ESLint',
-    'Babel',
+    'Vite',
     'Webpack',
+    'Vitest',
     'Jest',
     'React Testing Library',
-    'Enzyme',
-    'Cypress',
+    'Playwright',
+    'Firebase',
+    'Supabase',
+    'PostgreSQL',
+    'AWS (Lambda, DynamoDB, CloudFront)',
     'Contentful',
     'Sanity',
-    'React-Query',
-    'PostgreSQL',
-    'Postmark',
-    'Currently learning Go...',
-    'Currently working with OpenAI',
+    'LaunchDarkly',
+    'Datadog',
+    'ESLint',
+    'Git',
+    'Claude',
+    'OpenAI',
+    'Gemini',
   ];
 
   return (
@@ -108,31 +112,26 @@ const AboutSection: FC = () => {
           </ImageWrapper>
           <article className="self-center text-left md:-mt-6 text-custom-purple">
             <p className="mb-4">
-              {`Senior Frontend Engineer that loves creating solutions and crafting amazing user 
-              experiences.`}
+              {`Senior Product Engineer with 8+ years building high-impact products end to end. I care deeply about crafting
+              experiences that genuinely solve real problems — focused on creativity, user experience, accessibility, testing,
+              and performance.`}
             </p>
             <p className="mb-4">
-              My journey with Software development started in 2015, in my second year in the
-              University of Lagos. A group of friends and I wanted to build a social e-commerce
-              platform. It did not work out as planned but the interest was sparked, and I had
-              picked up relevant skills like HTML, CSS and JavaScript during that period
+              {`My journey started in 2015, where a side project sparked my interest in web
+              development. Since then, I've had the opportunity to work across B2B SaaS in data collection (Formplus),
+              fintech (Kora), recruiting (Talentdrop), and energy transition (epilot) — with leadership experience throughout.`}
             </p>
             <p className="mb-4">
-              {`Ever since, I have had the opportunity to work on interesting projects with focus on
-              adding value. I kept improving on the fundamental skills and have picked up valuable
-              experience along the way. After graduating from the University, I joined Formplus (data collection) as 
-              the first Frontend Engineer on the team.`}
+              {`Currently, I work as a Senior Product Engineer at epilot, where I've spent the last two years as the technical
+              owner of a design system, an embeddable SDK, and a validation engine — each a revenue-driving feature for a
+              360° platform used by major European energy companies. My best work happens at startups and scaleups where I can
+              be creative, move with autonomy, and see the direct impact of what I build.`}
             </p>
             <p className="mb-4">
-              {`Then, I joined Kora (payment infrastructure) as a Senior Frontend Engineer at Kora, and helped build 
-              the foundation for the Checkout Cards product for transactions. Thereafter, I joined Talentdrop as a Founding 
-              Engineer to build the future of recruiting.`}
+              {`I was awarded the UK Global Talent award in 2023, and I use AI tools daily to accelerate how I think and build. I contribute to the community through technical
+              writing. In my free time, I paint digitally 🎨 and keep learning
+              about the tech industry and test out new tools.`}
             </p>
-            <p className="mb-4">
-              {`Currently, I'm actively searching for my next role where I can keep adding value and working with 
-              amazing people. Feel free to reach out if you have an opening that fits my skillset or not - I'm open to learning`}
-            </p>
-            <p></p>
           </article>
         </article>
       </AboutTextWrapper>

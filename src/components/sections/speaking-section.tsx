@@ -28,7 +28,7 @@ const engagements: SpeakingEngagement[] = [
     type: 'Panel',
     title: 'Dissecting The Impact of Artificial Intelligence on Business and Career',
     description:
-      'Panelist at Futurr\'s Everyday Money 2025 event, exploring how AI is reshaping career paths and business strategy.',
+      "Panelist at Futurr's Everyday Money 2025 event, exploring how AI is reshaping career paths and business strategy.",
     event: 'Futurr — Everyday Money 2025',
     image: '/images/everydaymoney.jpeg',
     imageWidth: 640,
@@ -110,9 +110,7 @@ const SpeakingSection: FC = () => (
             <h4 className="mb-2 text-sm font-semibold text-gray-800 leading-snug sm:text-base">
               {item.title}
             </h4>
-            <p className="mb-3 text-xs leading-relaxed text-gray-600">
-              {item.description}
-            </p>
+            <p className="mb-3 text-xs leading-relaxed text-gray-600">{item.description}</p>
             <p className="text-xs text-gray-500 uppercase tracking-wide font-medium">
               {item.event}
             </p>

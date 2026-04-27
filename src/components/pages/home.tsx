@@ -8,6 +8,7 @@ import AboutSection from '../sections/about-section';
 import ProjectsSection from '../sections/projects-section';
 import NotesSection from '../sections/notes-section';
 import CommunitySection from '../sections/community-section';
+import SpeakingSection from '../sections/speaking-section';
 import BlogpostsSection from '../sections/blogposts-section';
 
 import { TalkProps, BlogPostProps, NoteProps, ProjectProps } from '../../types';
@@ -52,6 +53,7 @@ const HomePage: FC<HomePageProps> = ({ notes, projects, talks, blogPosts }) => {
           />
         </ImageWrapper>
       </MidSectionWrapper>
+      <SpeakingSection />
       <CommunitySection talks={talks} />
       <BlogpostsSection blogPosts={blogPosts} />
     </section>

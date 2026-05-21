@@ -37,7 +37,8 @@ const NFTCollectionGrid: FC<NFTCollectionGridProps> = ({ collections }) => {
       {collections.map((collection) => (
         <NFTCollectionCard
           key={collection.id}
-          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
+          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5"
+        >
           <div className="rounded-tl-md rounded-tr-md object-cover h-48 overflow-hidden">
             <Image
               src={collection.imageLink}

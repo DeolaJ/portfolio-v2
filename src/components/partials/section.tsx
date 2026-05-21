@@ -23,7 +23,8 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({ children, classNa
   <motion.section
     variants={fadeInUp}
     style={style}
-    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`)}>
+    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-12 ${className}`)}
+  >
     {children}
   </motion.section>
 );
@@ -42,7 +43,8 @@ export const SectionTitle: FC<PropsWithChildren<SectionProps>> = ({ children, cl
     variants={fadeInUp}
     className={twMerge(
       `mb-3.5 text-gray-600 tracking-wide uppercase font-semibold text-base ${className}`
-    )}>
+    )}
+  >
     {children}
   </motion.h2>
 );
@@ -61,7 +63,8 @@ export const SectionTitleSub: FC<PropsWithChildren<SectionProps>> = ({ children,
     variants={fadeInUp}
     className={twMerge(
       `mb-7 text-gray-800 text-2xl sm:text-3xl md:text-4xl tracking-wide font-semibold ${className}`
-    )}>
+    )}
+  >
     {children}
   </motion.h4>
 );
@@ -84,7 +87,8 @@ export const SlicedListSection: FC<PropsWithChildren<SlicedListSectionProps>> = 
 }) => (
   <motion.section
     variants={fadeInUp}
-    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`)}>
+    className={twMerge(`px-6 sm:px-10 md:px-24 lg:px-28 py-10 ${className}`)}
+  >
     <>{children}</>
 
     {complete && (

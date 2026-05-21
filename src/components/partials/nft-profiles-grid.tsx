@@ -35,7 +35,8 @@ const NFTProfileGrid: FC<NFTProfilesGridProps> = ({ profiles }) => {
       {profiles.map((profile) => (
         <NFTProfileCard
           key={profile.id}
-          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
+          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5"
+        >
           <div className="rounded-tl-md rounded-tr-md object-cover h-48 overflow-hidden">
             <Image
               src={profile.imageLink}

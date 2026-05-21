@@ -1,10 +1,5 @@
 import { useEffect, useRef } from 'react';
-import {
-  MotionValue,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-} from 'framer-motion';
+import { MotionValue, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 
 type Options = {
   spring?: boolean;

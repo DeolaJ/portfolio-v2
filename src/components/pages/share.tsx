@@ -36,14 +36,16 @@ const SharePage: FC = () => {
           href="https://medium.com/@DeolaJ"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full">
+          className="w-full"
+        >
           <Button text="Medium (Blog)" className="w-full text-xs" />
         </a>
         <a
           href="https://ballooncomics.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full">
+          className="w-full"
+        >
           <Button text="Balloon Comics 😶‍🌫️" className="w-full text-xs" />
         </a>
       </article>

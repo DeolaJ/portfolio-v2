@@ -62,7 +62,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
         ref={staggerRef}
         variants={projectsStagger}
         initial="initial"
-        animate={inView ? 'animate' : 'initial'}>
+        animate={inView ? 'animate' : 'initial'}
+      >
         {projects.map((project) => (
           <motion.div variants={projectItem} key={project.sys.id}>
             <FeaturedWrapper className="grid grid-cols-1 mb-10 md:mb-6 gap-y-4 md:gap-y-16 gap-x-8 md:grid-cols-5">
@@ -72,7 +73,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
                 whileTap={{ scale: 0.975 }}
                 rel="noopener noreferrer"
                 target="_blank"
-                className="hover:-translate-y-1.5 flex rounded-lg md:mb-16 md:col-start-1 md:col-end-4">
+                className="hover:-translate-y-1.5 flex rounded-lg md:mb-16 md:col-start-1 md:col-end-4"
+              >
                 <Image
                   src={project.fields.imageLink}
                   alt={project.fields.title}
@@ -87,14 +89,13 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
                   href={project.fields.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 no-underline hover:underline">
+                  className="text-gray-700 no-underline hover:underline"
+                >
                   <h4 className="mb-2 text-lg font-semibold text-gray-800 uppercase sm:text-xl md:text-2xl">
                     {project.fields.title}
                   </h4>
                 </a>
-                <p className="mb-4 text-base leading-6 text-gray-700">
-                  {project.fields.subtitle}
-                </p>
+                <p className="mb-4 text-base leading-6 text-gray-700">{project.fields.subtitle}</p>
                 <div className="flex flex-wrap items-center justify-start mb-4 text-gray-500">
                   {project.fields.stack.map((stack) => (
                     <span className="mr-4 text-sm" key={`${project.sys.id}-${stack}`}>
@@ -124,7 +125,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
           href={project.fields.liveLink}
           rel="noopener noreferrer"
           target="_blank"
-          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
+          className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5"
+        >
           <Image
             src={project.fields.imageLink}
             alt={project.fields.title}
@@ -138,7 +140,8 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
               href={project.fields.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 no-underline hover:underline">
+              className="text-gray-700 no-underline hover:underline"
+            >
               <h4 className="mb-2 text-base font-semibold text-gray-800 uppercase sm:text-lg">
                 {project.fields.title}
               </h4>

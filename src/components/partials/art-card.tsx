@@ -34,7 +34,8 @@ const ArtCard: FC<ArtCardProps> = ({ art, page }) => {
       variants={staggerMd}
       className="relative w-full rounded-lg"
       whileHover={{ scale: 1.025 }}
-      whileTap={{ scale: 0.975 }}>
+      whileTap={{ scale: 0.975 }}
+    >
       <div
         className="w-full bg-gray-100 rounded-lg h-72 shadow-artcard absolute left-0 top-0 z-10"
         ref={refPlaceholder}

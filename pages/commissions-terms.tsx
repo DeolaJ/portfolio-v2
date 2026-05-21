@@ -59,7 +59,8 @@ function CommissionTerms(): ReactElement {
           <motion.h1
             variants={fadeInUp}
             transition={{ delay: 0.3 }}
-            className="text-center text-3xl lg:text-4xl md:leading-tight">
+            className="text-center text-3xl lg:text-4xl md:leading-tight"
+          >
             <strong>Art Commissions - Terms and Conditions</strong>
           </motion.h1>
         </Section>

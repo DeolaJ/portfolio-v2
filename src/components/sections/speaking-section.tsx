@@ -89,7 +89,8 @@ const SpeakingSection: FC = () => (
       {engagements.map((item) => (
         <li
           key={item.id}
-          className="rounded-md bg-custom-lightGhost shadow-card overflow-hidden flex flex-col">
+          className="rounded-md bg-custom-lightGhost shadow-card overflow-hidden flex flex-col"
+        >
           <div className="w-full overflow-hidden">
             <Image
               src={item.image}
@@ -119,7 +120,8 @@ const SpeakingSection: FC = () => (
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-semibold text-custom-purple underline hover:opacity-70 transition-opacity">
+                    className="text-xs font-semibold text-custom-purple underline hover:opacity-70 transition-opacity"
+                  >
                     {link.label}
                   </a>
                 ))}

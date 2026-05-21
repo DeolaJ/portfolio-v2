@@ -74,7 +74,8 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
         </HeaderImageWrapper>
         <motion.article
           variants={staggerMd}
-          className="self-center py-6 text-center md:text-left md:col-start-1 md:col-end-4">
+          className="self-center py-6 text-center md:text-left md:col-start-1 md:col-end-4"
+        >
           <SectionTitle>{title}</SectionTitle>
           {shouldReduceMotion ? (
             <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">{subtitle}</h1>
@@ -82,7 +83,8 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
             <motion.h1
               variants={splitContainer}
               aria-label={subtitle}
-              className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">
+              className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight"
+            >
               {subtitleWords.map((word, i) => (
                 <span
                   // eslint-disable-next-line react/no-array-index-key
@@ -94,8 +96,12 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
                     verticalAlign: 'bottom',
                     paddingBottom: '0.12em',
                     marginBottom: '-0.12em',
-                  }}>
-                  <motion.span variants={splitWord} style={{ display: 'inline-block', willChange: 'transform' }}>
+                  }}
+                >
+                  <motion.span
+                    variants={splitWord}
+                    style={{ display: 'inline-block', willChange: 'transform' }}
+                  >
                     {word}
                     {i < subtitleWords.length - 1 ? ' ' : ''}
                   </motion.span>
@@ -114,7 +120,8 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
           <HeaderImageWrapper
             transition={{ delay: 0.3 }}
             variants={zoomIn}
-            className="relative w-full">
+            className="relative w-full"
+          >
             <Image
               src={imageLink}
               alt="hero illustration"

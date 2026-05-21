@@ -24,7 +24,8 @@ const PostNavigation: FC<PostNavigationProps> = ({ navigationPosts, pageType }) 
       className={`flex items-center w-full my-20 flex-col gap-4 sm:flex-row ${getPostStyle(
         next,
         previous
-      )}`}>
+      )}`}
+    >
       {previous && (
         <Link href={`/${pageType}/${previous.fields.slug}`}>
           <a>

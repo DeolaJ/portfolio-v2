@@ -41,7 +41,8 @@ const NoteCardItem: FC<NoteItemProps> = ({ note, index }) => {
   return (
     <NoteShell
       ref={ref}
-      className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5">
+      className="block w-full col-span-1 mb-12 rounded-md sm:w-3/4 md:w-full shadow-card hover:-translate-y-0.5"
+    >
       <ClipMask
         initial={{ clipPath: CLIP_HIDDEN }}
         animate={{ clipPath: inView ? CLIP_SHOWN : CLIP_HIDDEN }}
@@ -49,7 +50,8 @@ const NoteCardItem: FC<NoteItemProps> = ({ note, index }) => {
           duration: 1.05,
           ease: [0.83, 0, 0.17, 1],
           delay: inView ? index * 0.12 : 0,
-        }}>
+        }}
+      >
         <div className="rounded-tl-md rounded-tr-md object-cover h-48 overflow-hidden">
           <Image
             src={note.fields.imageLink}

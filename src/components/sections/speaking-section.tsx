@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 import { Section, SectionTitle, SectionTitleSub } from '../partials/section';
 
@@ -88,11 +87,9 @@ const SpeakingSection: FC = () => (
 
     <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {engagements.map((item) => (
-        <motion.li
+        <li
           key={item.id}
-          className="rounded-md bg-custom-lightGhost shadow-card overflow-hidden flex flex-col"
-          whileHover={{ scale: 1.025 }}
-          whileTap={{ scale: 0.975 }}>
+          className="rounded-md bg-custom-lightGhost shadow-card overflow-hidden flex flex-col">
           <div className="w-full overflow-hidden">
             <Image
               src={item.image}
@@ -129,7 +126,7 @@ const SpeakingSection: FC = () => (
               </div>
             )}
           </div>
-        </motion.li>
+        </li>
       ))}
     </ul>
   </SpeakingSectionWrapper>

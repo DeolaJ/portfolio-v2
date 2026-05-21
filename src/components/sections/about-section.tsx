@@ -13,45 +13,80 @@ const AboutTextWrapper = styled(Section)`
   background-repeat: no-repeat;
 `;
 
-const AboutSection: FC = () => {
-  const techStack = [
-    'HTML',
-    '(S)CSS',
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React JS',
-    'Next JS',
-    'Redux',
-    'React Query',
-    'Tailwind CSS',
-    'Chakra UI',
-    'Emotion',
-    'Styled-Components',
-    'Storybook',
-    'Web Components',
-    'Shadow DOM',
-    'Node JS',
-    'Vite',
-    'Webpack',
-    'Vitest',
-    'Jest',
-    'React Testing Library',
-    'Playwright',
-    'Firebase',
-    'Supabase',
-    'PostgreSQL',
-    'AWS (Lambda, DynamoDB, CloudFront)',
-    'Contentful',
-    'Sanity',
-    'LaunchDarkly',
-    'Datadog',
-    'ESLint',
-    'Git',
-    'Claude',
-    'OpenAI',
-    'Gemini',
-  ];
+const techStack = [
+  'HTML',
+  '(S)CSS',
+  'JavaScript (ES6+)',
+  'TypeScript',
+  'React JS',
+  'Next JS',
+  'Redux',
+  'React Query',
+  'Tailwind CSS',
+  'Chakra UI',
+  'Emotion',
+  'Styled-Components',
+  'Storybook',
+  'Web Components',
+  'Shadow DOM',
+  'Node JS',
+  'Vite',
+  'Webpack',
+  'Vitest',
+  'Jest',
+  'React Testing Library',
+  'Playwright',
+  'Firebase',
+  'Supabase',
+  'PostgreSQL',
+  'AWS (Lambda, DynamoDB, CloudFront)',
+  'Contentful',
+  'Sanity',
+  'LaunchDarkly',
+  'Datadog',
+  'Google Analytics',
+  'Google Search Console',
+  'ESLint',
+  'Git',
+  'Claude',
+  'OpenAI',
+  'Gemini',
+];
 
+const techStackHalf = Math.ceil(techStack.length / 2);
+const techStackRowA = techStack.slice(0, techStackHalf);
+const techStackRowB = techStack.slice(techStackHalf);
+
+const TechStackMarquee: FC = () => (
+  <div className="marquee" aria-label="Technologies I work with">
+    <div className="marquee-track">
+      <ul className="marquee-row">
+        {techStackRowA.map((stack) => (
+          <StackPills key={`a-${stack}`}>{stack}</StackPills>
+        ))}
+      </ul>
+      <ul className="marquee-row" aria-hidden="true">
+        {techStackRowA.map((stack) => (
+          <StackPills key={`a-dup-${stack}`}>{stack}</StackPills>
+        ))}
+      </ul>
+    </div>
+    <div className="marquee-track marquee-track-reverse">
+      <ul className="marquee-row">
+        {techStackRowB.map((stack) => (
+          <StackPills key={`b-${stack}`}>{stack}</StackPills>
+        ))}
+      </ul>
+      <ul className="marquee-row" aria-hidden="true">
+        {techStackRowB.map((stack) => (
+          <StackPills key={`b-dup-${stack}`}>{stack}</StackPills>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
+const AboutSection: FC = () => {
   return (
     <>
       {/* <Section>
@@ -141,11 +176,7 @@ const AboutSection: FC = () => {
         <SectionTitleSub>Tech Stack.</SectionTitleSub>
         <p>I have experience working with the following technologies</p>
         <article className="my-8">
-          <ul className="flex flex-wrap items-center justify-center">
-            {techStack.map((stack) => (
-              <StackPills key={stack}>{stack}</StackPills>
-            ))}
-          </ul>
+          <TechStackMarquee />
         </article>
       </Section>
     </>

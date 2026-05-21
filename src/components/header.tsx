@@ -2,12 +2,22 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import { Section, SectionTitle } from './partials/section';
 import Button from './partials/button';
 import { ImageWrapper } from './styled';
 import { fadeInUp, zoomIn, staggerMd } from '../animation';
+
+const splitContainer = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.06, delayChildren: 0.25 } },
+};
+
+const splitWord = {
+  initial: { y: '110%' },
+  animate: { y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+};
 
 type HeaderProps = {
   title: string;
@@ -45,6 +55,9 @@ const HeaderImageWrapper = styled(motion.article)`
 `;
 
 const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, imgHeight }) => {
+  const shouldReduceMotion = useReducedMotion();
+  const subtitleWords = subtitle.split(' ');
+
   return (
     <Section className="py-14 md:py-24">
       <div className="md:grid md:gap-8 md:grid-cols-5">
@@ -63,12 +76,33 @@ const Header: FC<HeaderProps> = ({ title, subtitle, roles, imageLink, imgWidth, 
           variants={staggerMd}
           className="self-center py-6 text-center md:text-left md:col-start-1 md:col-end-4">
           <SectionTitle>{title}</SectionTitle>
-          <motion.h1
-            variants={fadeInUp}
-            transition={{ delay: 0.3 }}
-            className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">
-            {subtitle}
-          </motion.h1>
+          {shouldReduceMotion ? (
+            <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">{subtitle}</h1>
+          ) : (
+            <motion.h1
+              variants={splitContainer}
+              aria-label={subtitle}
+              className="mb-4 text-4xl md:text-5xl lg:text-6xl md:leading-tight">
+              {subtitleWords.map((word, i) => (
+                <span
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={`${word}-${i}`}
+                  aria-hidden="true"
+                  style={{
+                    display: 'inline-block',
+                    overflow: 'hidden',
+                    verticalAlign: 'bottom',
+                    paddingBottom: '0.12em',
+                    marginBottom: '-0.12em',
+                  }}>
+                  <motion.span variants={splitWord} style={{ display: 'inline-block', willChange: 'transform' }}>
+                    {word}
+                    {i < subtitleWords.length - 1 ? ' ' : ''}
+                  </motion.span>
+                </span>
+              ))}
+            </motion.h1>
+          )}
           <motion.p variants={fadeInUp} transition={{ delay: 0.3 }} className="mb-4 font-semibold">
             {roles}
           </motion.p>

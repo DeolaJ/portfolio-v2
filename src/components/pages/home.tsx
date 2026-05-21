@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import styled from '@emotion/styled';
+import { motion, useTransform } from 'framer-motion';
 
 import Header from '../header';
 import AboutSection from '../sections/about-section';
@@ -13,13 +14,57 @@ import BlogpostsSection from '../sections/blogposts-section';
 
 import { TalkProps, BlogPostProps, NoteProps, ProjectProps } from '../../types';
 import { ImageWrapper } from '../styled';
+import { useSectionProgress } from '../../animation/use-section-progress';
 
-const MidSectionWrapper = styled.section`
+const MidSectionWrapper = styled(motion.section)`
   background-image: url('timber-blob.svg'), url('burned-orange-blob.svg'), url('purple-blob.svg');
   background-position: 10% 35%, 85% 70%, 70% 0%;
   background-size: 25%, 20%, 16%;
   background-repeat: no-repeat;
 `;
+
+const MID_IMAGE_SRC =
+  'https://res.cloudinary.com/dzpntisxj/image/upload/v1618660361/digital-art/IMG_4592_fg3oci.png';
+
+const MidParallax: FC = () => {
+  const [sectionRef, progress, shouldReduceMotion] = useSectionProgress<HTMLElement>();
+
+  const y = useTransform(progress, [0, 1], ['-12%', '12%']);
+  const scale = useTransform(progress, [0, 1], [0.94, 1.06]);
+  const rotate = useTransform(progress, [0, 1], [-3, 3]);
+
+  if (shouldReduceMotion) {
+    return (
+      <MidSectionWrapper ref={sectionRef}>
+        <ImageWrapper className="w-3/4 p-5 mx-auto text-center sm:w-2/3">
+          <Image
+            src={MID_IMAGE_SRC}
+            width={528}
+            height={528}
+            layout="intrinsic"
+            alt="hero illustration"
+          />
+        </ImageWrapper>
+      </MidSectionWrapper>
+    );
+  }
+
+  return (
+    <MidSectionWrapper ref={sectionRef} style={{ overflow: 'clip' }}>
+      <ImageWrapper className="w-3/4 p-5 mx-auto text-center sm:w-2/3">
+        <motion.div style={{ y, scale, rotate, willChange: 'transform' }}>
+          <Image
+            src={MID_IMAGE_SRC}
+            width={528}
+            height={528}
+            layout="intrinsic"
+            alt="hero illustration"
+          />
+        </motion.div>
+      </ImageWrapper>
+    </MidSectionWrapper>
+  );
+};
 
 type HomePageProps = {
   notes: NoteProps[];
@@ -42,17 +87,7 @@ const HomePage: FC<HomePageProps> = ({ notes, projects, talks, blogPosts }) => {
       <AboutSection />
       <ProjectsSection projects={projects} />
       <NotesSection notes={notes} />
-      <MidSectionWrapper className="">
-        <ImageWrapper className="w-3/4 p-5 mx-auto text-center sm:w-2/3">
-          <Image
-            src="https://res.cloudinary.com/dzpntisxj/image/upload/v1618660361/digital-art/IMG_4592_fg3oci.png"
-            width={528}
-            height={528}
-            layout="intrinsic"
-            alt="hero illustration"
-          />
-        </ImageWrapper>
-      </MidSectionWrapper>
+      <MidParallax />
       <SpeakingSection />
       <CommunitySection talks={talks} />
       <BlogpostsSection blogPosts={blogPosts} />

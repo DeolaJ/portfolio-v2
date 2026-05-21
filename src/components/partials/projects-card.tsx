@@ -6,6 +6,21 @@ import { motion } from 'framer-motion';
 
 import Button from './button';
 import { ProjectProps } from '../../types';
+import { useInView } from '../../animation/use-in-view';
+
+const projectsStagger = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.14, delayChildren: 0.08 } },
+};
+
+const projectItem = {
+  initial: { y: 48, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 type ProjectsCardProps = {
   projects: ProjectProps[];
@@ -39,54 +54,62 @@ const CardLink = styled(motion.a)<CardLinkProps>`
 `;
 
 const ProjectsCard: FC<ProjectsCardProps> = ({ projects, imageCard }) => {
+  const [staggerRef, inView] = useInView<HTMLDivElement>({ rootMargin: '-12% 0px' });
+
   if (!imageCard) {
     return (
-      <>
+      <motion.div
+        ref={staggerRef}
+        variants={projectsStagger}
+        initial="initial"
+        animate={inView ? 'animate' : 'initial'}>
         {projects.map((project) => (
-          <FeaturedWrapper
-            className="grid grid-cols-1 mb-10 md:mb-6 gap-y-4 md:gap-y-16 gap-x-8 md:grid-cols-5"
-            key={project.sys.id}>
-            <CardLink
-              href={project.fields.liveLink}
-              whileHover={{ scale: 1.025 }}
-              whileTap={{ scale: 0.975 }}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="hover:-translate-y-1.5 flex rounded-lg md:mb-16 md:col-start-1 md:col-end-4">
-              <Image
-                src={project.fields.imageLink}
-                alt={project.fields.title}
-                width={640}
-                height={345}
-                className="object-cover object-top w-full rounded-lg shadow-card"
-                layout="intrinsic"
-              />
-            </CardLink>
-            <div className="md:col-start-4 md:col-end-6">
-              <a
+          <motion.div variants={projectItem} key={project.sys.id}>
+            <FeaturedWrapper className="grid grid-cols-1 mb-10 md:mb-6 gap-y-4 md:gap-y-16 gap-x-8 md:grid-cols-5">
+              <CardLink
                 href={project.fields.liveLink}
-                target="_blank"
+                whileHover={{ scale: 1.025 }}
+                whileTap={{ scale: 0.975 }}
                 rel="noopener noreferrer"
-                className="text-gray-700 no-underline hover:underline">
-                <h4 className="mb-2 text-lg font-semibold text-gray-800 uppercase sm:text-xl md:text-2xl">
-                  {project.fields.title}
-                </h4>
-              </a>
-              <p className="mb-4 text-base leading-6 text-gray-700">{project.fields.subtitle}</p>
-              <div className="flex flex-wrap items-center justify-start mb-4 text-gray-500">
-                {project.fields.stack.map((stack) => (
-                  <span className="mr-4 text-sm" key={`${project.sys.id}-${stack}`}>
-                    {stack}
-                  </span>
-                ))}
+                target="_blank"
+                className="hover:-translate-y-1.5 flex rounded-lg md:mb-16 md:col-start-1 md:col-end-4">
+                <Image
+                  src={project.fields.imageLink}
+                  alt={project.fields.title}
+                  width={640}
+                  height={345}
+                  className="object-cover object-top w-full rounded-lg shadow-card"
+                  layout="intrinsic"
+                />
+              </CardLink>
+              <div className="md:col-start-4 md:col-end-6">
+                <a
+                  href={project.fields.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 no-underline hover:underline">
+                  <h4 className="mb-2 text-lg font-semibold text-gray-800 uppercase sm:text-xl md:text-2xl">
+                    {project.fields.title}
+                  </h4>
+                </a>
+                <p className="mb-4 text-base leading-6 text-gray-700">
+                  {project.fields.subtitle}
+                </p>
+                <div className="flex flex-wrap items-center justify-start mb-4 text-gray-500">
+                  {project.fields.stack.map((stack) => (
+                    <span className="mr-4 text-sm" key={`${project.sys.id}-${stack}`}>
+                      {stack}
+                    </span>
+                  ))}
+                </div>
+                {project.fields.githubLink && (
+                  <Button text="View on Github" link={project.fields.githubLink} sub />
+                )}
               </div>
-              {project.fields.githubLink && (
-                <Button text="View on Github" link={project.fields.githubLink} sub />
-              )}
-            </div>
-          </FeaturedWrapper>
+            </FeaturedWrapper>
+          </motion.div>
         ))}
-      </>
+      </motion.div>
     );
   }
 

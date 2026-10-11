@@ -49,8 +49,7 @@ function ArtCommissions(): ReactElement {
           <motion.h1
             variants={fadeInUp}
             transition={{ delay: 0.3 }}
-            className="mb-4 text-center text-3xl lg:text-4xl md:leading-tight"
-          >
+            className="mb-4 text-center text-3xl lg:text-4xl md:leading-tight">
             <strong>Art Commission Info</strong>
           </motion.h1>
 

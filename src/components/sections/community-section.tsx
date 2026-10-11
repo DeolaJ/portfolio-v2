@@ -35,8 +35,7 @@ const CommunityRowBody: FC<{ post: TalkProps }> = ({ post }) => (
       href={post.fields.slidesLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-xs underline opacity-80 hover:opacity-100"
-    >
+      className="text-xs underline opacity-80 hover:opacity-100">
       <h6>Slides</h6>
     </a>
   </div>
@@ -74,8 +73,7 @@ const CommunityRow: FC<CommunityRowProps> = ({ post, index }) => {
         }}
         className="rounded-md bg-custom-lightGhost"
         whileHover={{ scale: 1.025 }}
-        whileTap={{ scale: 0.975 }}
-      >
+        whileTap={{ scale: 0.975 }}>
         <CommunityRowBody post={post} />
       </motion.article>
     </div>

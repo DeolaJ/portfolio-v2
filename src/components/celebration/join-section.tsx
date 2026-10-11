@@ -146,7 +146,8 @@ const JoinSection: FC = () => {
           url: NAMING_CEREMONY.pageUrl,
         });
       } catch (error) {
-        // The guest closed the share sheet.
+        // Closing the sheet is an AbortError; anything else means sharing isn't allowed here.
+        if (error.name !== 'AbortError') copyLink(NAMING_CEREMONY.pageUrl);
       }
       return;
     }

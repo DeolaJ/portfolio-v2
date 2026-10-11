@@ -7,7 +7,7 @@ import { NAMING_CEREMONY } from '../../src/constants/naming-ceremony';
 
 const TITLE = 'Naming Ceremony | Adeola & Precious';
 const SHARE_TITLE = 'You’re invited: our baby girl’s naming ceremony';
-const DESCRIPTION = `Join Adeola Adeyemo and Precious Ikem on Zoom for the naming ceremony of their baby girl. ${NAMING_CEREMONY.date.long} at ${NAMING_CEREMONY.date.time} (${NAMING_CEREMONY.hostTimeZone} time).`;
+const DESCRIPTION = `Join Adeola Adeyemo and Precious Ikem on Zoom for the naming ceremony of their baby girl. ${NAMING_CEREMONY.date.long} at ${NAMING_CEREMONY.date.time} ${NAMING_CEREMONY.hostTimeZone}.`;
 
 function NamingCeremony(): ReactElement {
   return (

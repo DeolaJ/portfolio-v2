@@ -50,7 +50,7 @@ const getPhase = (now: Date | null): Phase => {
   return now < ENDS_AT ? 'live' : 'ended';
 };
 
-// Only shown when the guest's clock differs from London and Lagos on the day.
+// Only shown when the guest's clock isn't on GMT+1 on the day.
 const getLocalStartTime = (): string | null => {
   if (STARTS_AT.getTimezoneOffset() === -60) return null;
   const sameDay = String(STARTS_AT.getDate()) === NAMING_CEREMONY.date.day;
@@ -179,7 +179,7 @@ const JoinSection: FC = () => {
             <p className="mt-6 text-base leading-relaxed">
               {'Starts at '}
               <strong>
-                {NAMING_CEREMONY.date.time} in {NAMING_CEREMONY.hostTimeZone}
+                {NAMING_CEREMONY.date.time} {NAMING_CEREMONY.hostTimeZone}
               </strong>
               {localStartTime ? (
                 <>

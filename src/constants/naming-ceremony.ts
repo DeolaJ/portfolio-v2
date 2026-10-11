@@ -22,10 +22,10 @@ export const NAMING_CEREMONY = {
   hosts: ['Adeola', 'Precious'],
   pageUrl: PAGE_URL,
   ogImageUrl: 'https://deolaj.com/celebration/naming-ceremony-og.png',
-  // 4:30 pm in London (BST) and Lagos (WAT), which are both UTC+1 on this date.
+  // 4:30 pm GMT+1, which is both UK summer time and Lagos time on this date.
   startsAt: '2026-10-16T15:30:00Z',
   endsAt: '2026-10-16T18:30:00Z',
-  hostTimeZone: 'London and Lagos',
+  hostTimeZone: 'GMT+1',
   date: {
     weekday: 'Friday',
     month: 'October',

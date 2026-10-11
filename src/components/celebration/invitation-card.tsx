@@ -91,8 +91,8 @@ const InvitationCard: FC = () => {
           <motion.p
             variants={riseIn}
             custom={reduce}
-            className="mt-4 text-lg italic font-display text-custom-navy">
-            {hostTimeZone} time
+            className="mt-4 text-lg italic font-display lining-nums text-custom-navy">
+            {hostTimeZone}
           </motion.p>
 
           <motion.p

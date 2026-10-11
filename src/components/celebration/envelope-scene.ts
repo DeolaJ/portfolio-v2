@@ -143,8 +143,8 @@ const drawAddress = (): HTMLCanvasElement => {
   ctx.globalAlpha = 0.85;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = 'italic 500 104px "Cormorant Garamond", Georgia, serif';
-  ctx.fillText('Adeola & Precious', 600, 112);
+  ctx.font = 'italic 500 88px "Cormorant Garamond", Georgia, serif';
+  ctx.fillText('Adeola & Precious Adeyemo', 600, 112);
   return canvas;
 };
 

@@ -2,7 +2,10 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 
 import { EnvelopeScene } from './envelope-scene';
+import LoadingBloom from './loading-bloom';
 import { REVEAL_ATTRIBUTE } from './reveal';
+
+const LOAD_TIMEOUT_MS = 4000;
 
 // Hidden unless the boot script (or the page) opted this visit into the envelope.
 const Overlay = styled.div`
@@ -25,6 +28,7 @@ const EnvelopeReveal: FC<EnvelopeRevealProps> = ({ active, onOpened, onFinished 
   const sceneRef = useRef<EnvelopeScene | null>(null);
   const pendingOpen = useRef(false);
   const callbacks = useRef({ onOpened, onFinished });
+  const [ready, setReady] = useState(false);
   const [passThrough, setPassThrough] = useState(false);
 
   callbacks.current = { onOpened, onFinished };
@@ -38,6 +42,14 @@ const EnvelopeReveal: FC<EnvelopeRevealProps> = ({ active, onOpened, onFinished 
     };
     document.body.style.overflow = 'hidden';
     window.scrollTo(0, 0);
+
+    const skip = () => {
+      releaseScroll();
+      callbacks.current.onOpened();
+      callbacks.current.onFinished();
+    };
+    // Past this, a slow connection gets the page instead of waiting longer on the 3D code.
+    const giveUp = window.setTimeout(skip, LOAD_TIMEOUT_MS);
 
     import('./envelope-scene')
       .then(({ createEnvelopeScene }) =>
@@ -56,23 +68,24 @@ const EnvelopeReveal: FC<EnvelopeRevealProps> = ({ active, onOpened, onFinished 
         })
       )
       .then((scene) => {
+        window.clearTimeout(giveUp);
         if (cancelled) {
           scene.dispose();
           return;
         }
         sceneRef.current = scene;
+        setReady(true);
         if (pendingOpen.current) scene.open();
       })
       .catch(() => {
         // No WebGL, or the chunk failed to load: go straight to the page.
-        if (cancelled) return;
-        releaseScroll();
-        callbacks.current.onOpened();
-        callbacks.current.onFinished();
+        window.clearTimeout(giveUp);
+        if (!cancelled) skip();
       });
 
     return () => {
       cancelled = true;
+      window.clearTimeout(giveUp);
       releaseScroll();
       if (sceneRef.current) sceneRef.current.dispose();
       sceneRef.current = null;
@@ -90,6 +103,7 @@ const EnvelopeReveal: FC<EnvelopeRevealProps> = ({ active, onOpened, onFinished 
       style={{ pointerEvents: passThrough ? 'none' : 'auto' }}>
       <div ref={backdropRef} className="absolute inset-0 bg-custom-linen" />
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" aria-hidden="true" />
+      {!ready && <LoadingBloom />}
       {!passThrough && (
         <>
           <button

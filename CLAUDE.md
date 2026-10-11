@@ -47,7 +47,8 @@ A page file in `pages/` sets the `<Head>` and renders a body component from
 - Guests check the page for the Zoom link instead of waiting for a message. Paste the link,
   meeting ID and passcode into `ZOOM` in `src/constants/naming-ceremony.ts` and deploy.
 - First visits get a three.js envelope reveal (`src/components/celebration/envelope-scene.ts`).
-  Returning visitors and reduced-motion users skip it.
+  Returning visitors, reduced-motion users and anyone whose 3D code takes over 4 seconds to
+  load skip it.
 - The share image `public/celebration/naming-ceremony-og.png` is a static 1200x630 render.
 
 ## Design preferences

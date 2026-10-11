@@ -19,7 +19,7 @@ const ZOOM: ZoomDetails = {
 };
 
 export const NAMING_CEREMONY = {
-  hosts: ['Adeola Adeyemo', 'Precious Ikem'],
+  hosts: ['Adeola', 'Precious'],
   pageUrl: PAGE_URL,
   ogImageUrl: 'https://deolaj.com/celebration/naming-ceremony-og.png',
   // 4:30 pm in London (BST) and Lagos (WAT), which are both UTC+1 on this date.

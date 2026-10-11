@@ -65,10 +65,8 @@ const InvitationCard: FC = () => {
           <motion.p
             variants={riseIn}
             custom={reduce}
-            className="mt-3 text-3xl font-semibold leading-tight font-display md:text-4xl text-custom-navy">
-            {hosts[0]}
-            <span className="block my-1 text-2xl italic font-medium text-custom-rose">&amp;</span>
-            {hosts[1]}
+            className="mt-3 text-4xl font-semibold leading-tight font-display md:text-5xl text-custom-navy">
+            {hosts[0]} <span className="italic font-medium text-custom-rose">&amp;</span> {hosts[1]}
           </motion.p>
 
           <motion.time

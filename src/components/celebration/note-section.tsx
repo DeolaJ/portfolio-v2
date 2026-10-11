@@ -17,8 +17,7 @@ const NoteSection: FC = () => {
         <SectionTitle>A note from us</SectionTitle>
         <motion.p variants={riseIn} custom={reduce} className="text-lg leading-relaxed md:text-xl">
           Our little girl has filled our home with so much joy. We can&rsquo;t wait to name her
-          surrounded by the people who have loved us, prayed for us and cheered us on. Wherever you
-          are in the world, pull up a chair and celebrate with us.
+          surrounded by the people who have loved us, prayed for us and cheered us on.
         </motion.p>
         <motion.p
           variants={riseIn}

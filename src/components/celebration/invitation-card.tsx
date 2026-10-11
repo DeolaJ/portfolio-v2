@@ -11,7 +11,7 @@ const dateRuleClass =
 
 const InvitationCard: FC = () => {
   const reduce = useReducedMotion();
-  const { hosts, date, hostTimeZone, startsAt } = NAMING_CEREMONY;
+  const { hosts, surname, date, hostTimeZone, startsAt } = NAMING_CEREMONY;
 
   return (
     <section className="px-4 pt-12 pb-4 sm:px-8 md:pt-20">
@@ -66,7 +66,8 @@ const InvitationCard: FC = () => {
             variants={riseIn}
             custom={reduce}
             className="mt-3 text-4xl font-semibold leading-tight font-display md:text-5xl text-custom-navy">
-            {hosts[0]} <span className="italic font-medium text-custom-rose">&amp;</span> {hosts[1]}
+            {hosts[0]} <span className="italic font-medium text-custom-rose">&amp;</span> {hosts[1]}{' '}
+            {surname}
           </motion.p>
 
           <motion.time

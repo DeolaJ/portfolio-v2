@@ -20,8 +20,9 @@ const ZOOM: ZoomDetails = {
 
 export const NAMING_CEREMONY = {
   hosts: ['Adeola', 'Precious'],
+  surname: 'Adeyemo',
   pageUrl: PAGE_URL,
-  ogImageUrl: 'https://deolaj.com/celebration/naming-ceremony-og.png',
+  ogImageUrl: 'https://deolaj.com/celebration/naming-ceremony-card.png',
   // 4:30 pm GMT+1, which is both UK summer time and Lagos time on this date.
   startsAt: '2026-10-16T15:30:00Z',
   endsAt: '2026-10-16T18:30:00Z',

@@ -13,9 +13,9 @@ const PAGE_URL = 'https://deolaj.com/celebration/naming-ceremony';
  * for a message, so the link shows up for everyone as soon as this deploys.
  */
 const ZOOM: ZoomDetails = {
-  url: '',
-  meetingId: '',
-  passcode: '',
+  url: 'https://us02web.zoom.us/j/87307556453?pwd=L3Z1c3bF5FSnNKwBrKEsPsEHgHAElo.1',
+  meetingId: '873 0755 6453',
+  passcode: '706848',
 };
 
 export const NAMING_CEREMONY = {

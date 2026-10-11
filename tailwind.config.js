@@ -15,6 +15,9 @@ module.exports = {
         card: '0 2px 11px 2px rgba(0, 0, 0, 0.1)',
         under: '0px 1px 10px 1px rgba(0, 0, 0, 0.05)',
       },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      },
     },
     colors: {
       transparent: 'transparent',
@@ -32,6 +35,11 @@ module.exports = {
         tintRed: '#610c06',
         darkOrange: '#a93b23',
         lightGhost: '#fefaff',
+        linen: '#F5EFE7',
+        paper: '#FFFDF9',
+        edge: '#E4D9CC',
+        navy: '#24325F',
+        rose: '#A0445C',
       },
     },
   },

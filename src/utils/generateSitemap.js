@@ -11,6 +11,7 @@ async function generateSiteMap() {
     'pages/**/*.tsx',
     'pages/birthday-party.tsx',
     '!pages/_*.tsx',
+    '!pages/celebration/**',
     '!pages/**/[slug].tsx',
     '!pages/api',
   ]);

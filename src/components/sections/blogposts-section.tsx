@@ -40,8 +40,7 @@ const BlogPostRow: FC<BlogPostRowProps> = ({ post, index }) => {
           href={post.fields.mediumLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block p-2.5 mb-6 text-gray-700 border border-gray-400 border-solid rounded-md sm:p-6 hover:text-custom-purple hover:border-custom-purple"
-        >
+          className="block p-2.5 mb-6 text-gray-700 border border-gray-400 border-solid rounded-md sm:p-6 hover:text-custom-purple hover:border-custom-purple">
           <h4 className="text-sm md:text-base">{post.fields.title}</h4>
         </a>
       </article>
@@ -62,14 +61,12 @@ const BlogPostRow: FC<BlogPostRowProps> = ({ post, index }) => {
       }}
       className="rounded-md bg-custom-lightGhost"
       whileHover={{ scale: 1.025 }}
-      whileTap={{ scale: 0.975 }}
-    >
+      whileTap={{ scale: 0.975 }}>
       <a
         href={post.fields.mediumLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="block p-2.5 mb-6 text-gray-700 border border-gray-400 border-solid rounded-md sm:p-6 hover:text-custom-purple hover:border-custom-purple"
-      >
+        className="block p-2.5 mb-6 text-gray-700 border border-gray-400 border-solid rounded-md sm:p-6 hover:text-custom-purple hover:border-custom-purple">
         <h4 className="text-sm md:text-base">{post.fields.title}</h4>
       </a>
     </motion.article>
